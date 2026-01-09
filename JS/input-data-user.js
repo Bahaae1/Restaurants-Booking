@@ -1,3 +1,13 @@
+// دا الاليرت
+let alertM = document.getElementById('transparent')
+let closeAlert = document.getElementById('close-alert')
+let alertMsg = document.getElementById('alert-msg')
+
+closeAlert.addEventListener('click', ()=>{
+    alertM.style.display = 'none'
+})
+
+
 
 // اظهار بيانات المطعم
 window.onload = function(){
@@ -100,29 +110,34 @@ if(localStorage.dataBookingArr != null){
 function dataBooking(){
     let currentUser = JSON.parse(localStorage.getItem('currentUser'))
     let currentRest = JSON.parse(localStorage.getItem('clickRest'))
-    let BookingObj = {
-        emailCurrentUser:currentUser.email,
-        nameRest:currentRest.name,
-        locationRest:currentRest.location,
-        typeRest:currentRest.type,
-        name:name.value,
-        phone:phone.value,
-        email:email.value,
-        countPeople:countPeople.value,
-        date:date.value,
-        time:time.value,
-        nots:nots.value,
-        numBookings:Math.floor(Math.random() * 100000),
+    if(name.value === '' || phone.value === '' || email.value === '' || countPeople.value === '' || date.value === '' || time.value === ''){
+        alertMsg.innerHTML = 'من فضلك ادخل جميع البيانات'
+        alertM.style.display = 'block'
+    }else{
+        let BookingObj = {
+            emailCurrentUser:currentUser.email,
+            nameRest:currentRest.name,
+            locationRest:currentRest.location,
+            typeRest:currentRest.type,
+            name:name.value,
+            phone:phone.value,
+            email:email.value,
+            countPeople:countPeople.value,
+            date:date.value,
+            time:time.value,
+            nots:nots.value,
+            numBookings:Math.floor(Math.random() * 100000),
+        }
+        dataBookingArr.push(BookingObj)
+        bookingNow.push(BookingObj)
+    
+    
+    
+        localStorage.setItem('dataBookingArr' , JSON.stringify(dataBookingArr))
+        localStorage.setItem('bookingNow' , JSON.stringify(bookingNow))
+    
+        location.replace('../HTML/payment.html')
     }
-    dataBookingArr.push(BookingObj)
-    bookingNow.push(BookingObj)
-
-
-
-    localStorage.setItem('dataBookingArr' , JSON.stringify(dataBookingArr))
-    localStorage.setItem('bookingNow' , JSON.stringify(bookingNow))
-
-    location.replace('../HTML/payment.html')
 
 }
 // دا عشان يحذف البيانات اللي في الاينبوتات

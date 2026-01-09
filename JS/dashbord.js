@@ -422,46 +422,6 @@ showCompletedBooking();
 
 
 
-// let end = [];
-// if(localStorage.end !== null){
-//     end = JSON.parse(localStorage.end)
-// }else{
-//     end = [];
-// }
-// // زرار  انتهاء الحجز
-// function EndBooking(i){
-//     end.push(bookingsUser[i])
-//     localStorage.setItem('end' , JSON.stringify(end))
-
-//     bookingsUser.splice(i,1)
-//     localStorage.setItem('dataBookingArr' , JSON.stringify(bookingsUser))
-// }
-// // عرض الحجوزات انتهت
-// function showEndBooking(){
-//     let locEnd = JSON.parse(localStorage.getItem("end"))
-//     let showBookingsEnd ;
-
-//     for(let i = 0 ; i < locEnd.length ;i++){
-//         showBookingsEnd = `
-//         <tr>
-//             <td>BH${locEnd[i].numBookings}</td>
-//             <td>${locEnd[i].nameRest}</td>
-//             <td>${locEnd[i].name}</td>
-//             <td>${locEnd[i].date}</td>
-//             <td>${locEnd[i].time}</td>
-//             <td class="status-end">انتهي</td>
-//             <td>
-//                 <i  class="fas fa-eye "></i>
-//             </td>
-//         </tr>
-//                 `
-//                 document.getElementById('show-bookings').innerHTML += showBookingsEnd
-//                 document.getElementById('show-bookings-control').innerHTML += showBookingsEnd
-//             }
-// }
-// showEndBooking();
-
-
 
 
 
@@ -470,8 +430,8 @@ showCompletedBooking();
 // عرض عدد الحجوزات
 function countBooking(){
     let countActive = JSON.parse(localStorage.getItem('dataBookingArr'))
-    let countCancelled = JSON.parse(localStorage.getItem('dataBookingArr'))
-    let countCompleted = JSON.parse(localStorage.getItem('dataBookingArr'))
+    let countCancelled = JSON.parse(localStorage.getItem('cancelled'))
+    let countCompleted = JSON.parse(localStorage.getItem('completed'))
     document.getElementById('count-booking').innerText = countActive.length + countCancelled.length + countCompleted.length
     document.getElementById('count-booking-day').innerText = countActive.length
 }

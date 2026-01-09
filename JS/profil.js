@@ -181,6 +181,7 @@ function emailBlur(){
 }
 
 
+// filterAll()
 // عرض الحجوزات
 
 let booking = JSON.parse(localStorage.getItem('dataBookingArr'))
@@ -243,64 +244,13 @@ filters.forEach(e=>{
     e.addEventListener('click', ()=>{
         filters.forEach(el=>{
             el.classList.remove('active')
+            filterAll()
         })
         e.classList.add('active')
     })
 })
 
-// function filterAll(){
-//     let all = document.getElementById('all')
-//     let coming = document.getElementById('accoming')
 
-//     let show;
-//         for(let i = 0 ; i < bookingUser.length;i++){
-//             if(all.classList.contains('active')){
-//                 show = `
-//         <div class="booking-card coming-card">
-//                         <div class="head-booking-card">
-//                             <h3>${bookingUser[i].nameRest}</h3>
-//                             <span class="coming">قادم</span>
-//                         </div>
-
-//                         <p>مطعم ${bookingUser[i].typeRest} - ${bookingUser[i].locationRest}</p>
-
-//                         <div class="booking-details">
-//                             <div class="date">
-//                                 <i class="fas fa-calendar"></i>
-//                                 <span>${bookingUser[i].date}</span>
-//                             </div>
-//                             <div class="time">
-//                                 <i class="fas fa-clock"></i>
-//                                 <span>${bookingUser[i].time}</span>
-//                             </div>
-//                             <div class="count-people">
-//                                 <i class="fas fa-users"></i>
-//                                 <span>${bookingUser[i].countPeople} أشخاص</span>
-//                             </div>
-//                         </div>
-                    
-//                     <div class="btns">
-//                         <button on class="btn-outline">
-//                             <i class="fas fa-eye"></i>
-//                             <span>التفاصيل</span>
-//                         </button>
-//                         <button class="btn-danger">
-//                             <i class="fas fa-times"></i>
-//                             <span>إلغاء الحجز</span>
-//                         </button>
-//                         <button class="btn-success">
-//                             <i class="fas fa-edit"></i>
-//                             <span >تعديل</span>
-//                         </button>
-//                     </div>
-//                     </div>
-//         `
-//     }
-    
-//     document.querySelector('.bookings-list').innerHTML += show
-// }
-// }
-// filterAll()
 
 let showFormEditBooking = document.getElementById('transparen')
 
@@ -393,32 +343,32 @@ function cancelledBooking(i){
 }
 // عرض الحجوزات الملغيه
 let locCancelled = JSON.parse(localStorage.getItem("cancelled"))
+let bookingCanc = locCancelled.filter(e=> e.emailCurrentUser === user.email )
 function showCancelledBooking(){
-    let bookingUser = locCancelled.filter(e=> e.emailCurrentUser === user.email )
     let showBookingsCancelled ;
 
-    for(let i = 0 ; i < bookingUser.length ;i++){
+    for(let i = 0 ; i < bookingCanc.length ;i++){
         showBookingsCancelled = ` 
         <div class="booking-card cancelled-card">
                     <div class="head-booking-card">
-                            <h3>${bookingUser[i].nameRest}</h3>
+                            <h3>${bookingCanc[i].nameRest}</h3>
                             <span class="cancelled">ملغي</span>
                         </div>
 
-                        <p>مطعم ${bookingUser[i].typeRest} - ${bookingUser[i].locationRest}</p>
+                        <p>مطعم ${bookingCanc[i].typeRest} - ${bookingCanc[i].locationRest}</p>
 
                         <div class="booking-details">
                             <div class="date">
                                 <i class="fas fa-calendar"></i>
-                                <span>${bookingUser[i].date}</span>
+                                <span>${bookingCanc[i].date}</span>
                             </div>
                             <div class="time">
                                 <i class="fas fa-clock"></i>
-                                <span>${bookingUser[i].time}</span>
+                                <span>${bookingCanc[i].time}</span>
                             </div>
                             <div class="count-people">
                                 <i class="fas fa-users"></i>
-                                <span>${bookingUser[i].countPeople} أشخاص</span>
+                                <span>${bookingCanc[i].countPeople} أشخاص</span>
                             </div>
                         </div>
                     
@@ -443,40 +393,37 @@ showCancelledBooking();
 
 // زرار اعادة الحجز
 // function returnBooking(i){
-    
-//     // console.log(locCancelled[i])
-//     // console.log(i)
-//     // localStorage.setItem('clickRest' , JSON.stringify(ratingObj[i]))
 // }
+
 
 // عرض الحجوزات اللي انتهت
 let locCompleted = JSON.parse(localStorage.getItem("completed"))
+let bookingComp = locCompleted.filter(e=> e.emailCurrentUser === user.email )
 function showCompletedBooking(){
-    let bookingUser = locCompleted.filter(e=> e.emailCurrentUser === user.email )
     let showBookingsCompleted ;
 
-    for(let i = 0 ; i < bookingUser.length ;i++){
+    for(let i = 0 ; i < bookingComp.length ;i++){
         showBookingsCompleted = `
     <div class="booking-card completed-card">
                         <div class="head-booking-card">
-                            <h3>${bookingUser[i].nameRest}</h3>
+                            <h3>${bookingComp[i].nameRest}</h3>
                             <span class="completed">مكتمل</span>
                         </div>
 
-                        <p>مطعم ${bookingUser[i].typeRest} - ${bookingUser[i].locationRest}</p>
+                        <p>مطعم ${bookingComp[i].typeRest} - ${bookingComp[i].locationRest}</p>
 
                         <div class="booking-details">
                             <div class="date">
                                 <i class="fas fa-calendar"></i>
-                                <span>${bookingUser[i].date}</span>
+                                <span>${bookingComp[i].date}</span>
                             </div>
                             <div class="time">
                                 <i class="fas fa-clock"></i>
-                                <span>${bookingUser[i].time}</span>
+                                <span>${bookingComp[i].time}</span>
                             </div>
                             <div class="count-people">
                                 <i class="fas fa-users"></i>
-                                <span>${bookingUser[i].countPeople} أشخاص</span>
+                                <span>${bookingComp[i].countPeople} أشخاص</span>
                             </div>
                         </div>
                     
@@ -497,3 +444,14 @@ function showCompletedBooking(){
 
 }
 showCompletedBooking()
+
+
+// عرض عدد الحجوزات كل نوع لوحده
+function showCount(){
+    document.getElementById('all-booking').innerHTML = `(${bookingUser.length + bookingCanc.length + bookingComp.length})`
+    document.getElementById('accoming-booking').innerHTML = `(${bookingUser.length})`
+    document.getElementById('completed-booking').innerHTML = `(${bookingComp.length})`
+    document.getElementById('cancelled-booking').innerHTML = `(${bookingCanc.length})`
+}
+showCount()
+

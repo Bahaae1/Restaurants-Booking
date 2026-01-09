@@ -676,7 +676,24 @@ p{
     #transparent .info-account-user{
         width: 400px;
     }
+    #transparen .form{
+        width: 400px;
+    }
+    #transparen .form .grid{
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    #transparen .form .grid select, #transparen .form .grid input, #transparen .form .grid textarea{
+        padding: 10px 13px;
+        font-size: 12px;
+    }
+    #transparen .form .grid label{
+        font-size: 16px;
+    }
+    #transparen .form .grid textarea{
+        height: 85px;
+    }
 }
+
 @media(max-width:460px){
     nav .logo i {
         font-size: 19px;
@@ -720,6 +737,15 @@ p{
     }
     .info-account-user ul li h3{
         margin-bottom: 0;
+    }
+    #transparen .form{
+        width: 320px;
+    }
+    #transparen .form .grid{
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    #transparen .form .footer-form .help{
+        font-size: 16px;
     }
 
 }
