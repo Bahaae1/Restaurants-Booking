@@ -12,7 +12,7 @@ up.onclick = function(){
 
 function logout(){
     localStorage.removeItem('currentUser')
-    location.assign('../HTML/index.html')
+    location.assign('../index.html')
 }
 
 
