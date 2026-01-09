@@ -163,7 +163,7 @@ window.onload = function showDataUser(){
 };
 function logout(){
     localStorage.removeItem('currentUser')
-    location.assign('../HTML/Home-Page.html')
+    location.assign('../HTML/index.html')
 }
 
 // السيرش الل في الهيدر
