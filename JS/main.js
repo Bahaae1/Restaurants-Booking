@@ -142,7 +142,7 @@ window.onload = function showDataUser(){
         let user = `
         <div class="user">
         <div class="name">
-        <a style="border: none;" href="./profil.html"><i class="fa-solid fa-circle-user"></i></a>
+        <a style="border: none;" href="../HTML/profil.html"><i class="fa-solid fa-circle-user"></i></a>
         <h4>${search.name}</h4> 
         </div>
         <i class="fa-solid fa-bell"></i>
