@@ -39,8 +39,8 @@ window.onload = function showDataUser(){
 
 }
 
-    // لما المستخدم يسجل خروج
 };
+// لما المستخدم يسجل خروج
 function logout(){
     localStorage.removeItem('currentUser')
     location.assign('../index.html')

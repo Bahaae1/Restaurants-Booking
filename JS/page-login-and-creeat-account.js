@@ -212,7 +212,7 @@ function loginUser(){
     
     let localObject = JSON.parse(localStorage.getItem('infoUser'))
     let checkE = localObject.some(e=>e.email === email.value && e.password === password.value)
-
+    
     if(email.value === ''){
         alertMsg.innerHTML = 'من فضلك لا تترك البريد الالكتروني فارغ'
         alertM.style.display = 'block'
@@ -239,7 +239,7 @@ function loginUser(){
         }
         localStorage.setItem('currentUser', JSON.stringify(user))
         alertMsg.innerHTML = 'تم تسجيل الدخول بنجاح'
-        location.assign('/index.html')
+        location.assign('../index.html')
         return;
     }
     

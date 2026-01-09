@@ -137,16 +137,16 @@ window.onload = function showDataUser(){
 
     let linkLogin = document.querySelector('.link-login')
     let afterLogin = document.querySelector('.after-login')
-        linkLogin.style.display = 'none'
+    linkLogin.style.display = 'none'
 
         let user = `
         <div class="user">
-        <div class="name">
-        <a style="border: none;" href="./HTML/profil.html"><i class="fa-solid fa-circle-user"></i></a>
-        <h4>${search.name}</h4> 
-        </div>
-        <i class="fa-solid fa-bell"></i>
-        <i onclick="logout()" class="fa-solid fa-right-from-bracket"></i>
+            <div class="name">
+                <a style="border: none;" href="./HTML/profil.html"><i class="fa-solid fa-circle-user"></i></a>
+                <h4>${search.name}</h4> 
+            </div>
+            <i class="fa-solid fa-bell"></i>
+            <i onclick="logout()" class="fa-solid fa-right-from-bracket"></i>
 
         </div>
         `
@@ -154,13 +154,10 @@ window.onload = function showDataUser(){
 
         }
         
-        // else{
-        // console.log('غير موجود')
-
-// }
-
-    // لما المستخدم يسجل خروج
 };
+
+
+// لما المستخدم يسجل خروج
 function logout(){
     localStorage.removeItem('currentUser')
     location.assign('../index.html')
