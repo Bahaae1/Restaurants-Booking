@@ -215,7 +215,7 @@ function showBooking(){
                         </div>
                     
                     <div class="btns">
-                        <button on class="btn-outline">
+                        <button onclick="(showDetailsBooking(${i}))" class="btn-outline">
                             <i class="fas fa-eye"></i>
                             <span>التفاصيل</span>
                         </button>
@@ -237,7 +237,8 @@ function showBooking(){
 }
 showBooking();
 
-
+// عرض الحجوزات النشطة
+document.getElementById('count-booking-active').innerHTML = bookingUser.length
 
 let filters = document.querySelectorAll('#filters button')
 filters.forEach(e=>{
@@ -373,11 +374,11 @@ function showCancelledBooking(){
                         </div>
                     
                     <div class="btns">
-                        <button class="btn-outline">
+                        <button onclick="(showDetailsBooking(${i}))" class="btn-outline">
                             <i class="fas fa-eye"></i>
                             <span>التفاصيل</span>
                         </button>
-                        <button onclick="returnBooking(${i})" class="btn-secondary">
+                        <button class="btn-secondary">
                             <i class="fas fa-redo"></i>
                             <span>اعادة الحجز</span>
                         </button>
@@ -454,4 +455,13 @@ function showCount(){
     document.getElementById('cancelled-booking').innerHTML = `(${bookingCanc.length})`
 }
 showCount()
+
+
+// زرار عرض تفاصيل الحجز
+function showDetailsBooking(i){
+    let locBooking = JSON.parse(localStorage.getItem('dataBookingArr'))
+    console.log(locBooking[i])
+}
+
+
 
