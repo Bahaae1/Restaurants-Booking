@@ -17,10 +17,10 @@ let homeCreateAccount = document.querySelector('.nav-left .create-account');
 
 
 homeLoginBtn.addEventListener('click' , ()=>{
-    location.assign('../HTML/page-login-and-creeat-account.html')
+    location.assign('./HTML/page-login-and-creeat-account.html')
 })
 homeCreateAccount.addEventListener('click' , ()=>{
-    location.assign('../HTML/page-login-and-creeat-account.html');
+    location.assign('./HTML/page-login-and-creeat-account.html');
     
 })
 
@@ -114,7 +114,7 @@ closeAlert.addEventListener('click', ()=>{
 function btnBooking(i){
     localStorage.setItem('clickRest' , JSON.stringify(ratingObj[i]))
     if(localStorage.getItem('currentUser')){
-        location.assign('../HTML/input-data-user.html')
+        location.assign('./HTML/input-data-user.html')
     }else{
         alertMsg.innerHTML = 'يجب عليك تسجيل الدخول اولا'
         alertM.style.display = 'block'
@@ -124,7 +124,7 @@ function btnBooking(i){
 // المفروض دي اللي هتاخده على صفحة المطعم
 function btnDetails(i){
     localStorage.setItem('clickRest' , JSON.stringify(ratingObj[i]))
-    location.assign('../HTML/Restaurant.html')
+    location.assign('./HTML/Restaurant.html')
 }
 
 
@@ -142,7 +142,7 @@ window.onload = function showDataUser(){
         let user = `
         <div class="user">
         <div class="name">
-        <a style="border: none;" href="../HTML/profil.html"><i class="fa-solid fa-circle-user"></i></a>
+        <a style="border: none;" href="./HTML/profil.html"><i class="fa-solid fa-circle-user"></i></a>
         <h4>${search.name}</h4> 
         </div>
         <i class="fa-solid fa-bell"></i>
@@ -234,7 +234,7 @@ function goAdmin(){
         btn.appendChild(createBtn)
 
         createBtn.onclick = function(){
-            location.assign('../HTML/dashbord.html')
+            location.assign('./HTML/dashbord.html')
         }
     }
     else{
