@@ -324,7 +324,6 @@ function showBooking(){
             <td>${bookingsUser[i].time}</td>
             <td class="status-yellow">قيد الانتظار</td>
             <td>
-            <i onclick="EndBooking(${i})" class="fa-solid fa-flag-checkered"></i>
             <i onclick="completedBooking(${i})" class="fas fa-check"></i>
                 <i onclick="cancelledBooking(${i})" class="fas fa-times"></i>
             </td>

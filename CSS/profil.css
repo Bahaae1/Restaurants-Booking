@@ -426,11 +426,11 @@ header .fa-right-from-bracket:hover{
     background-color: var(--danger-color);
     border: 2px solid var(--danger-color);
 }
-.booking-card .btns .btn-success{
+.booking-card .btns .btn-success,
+.booking-card .btns .btn-secondary{
     background-color: var(--success-color);
     border: 2px solid var(--success-color);
 }
-
 /* الفوتر */
 footer{
     background-color: var(--dark-color);

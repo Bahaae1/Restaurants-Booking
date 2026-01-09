@@ -349,36 +349,35 @@ btnSaveEdit.onclick = function(){
         
     }
     showFormEditBooking.style.display = 'none'
-    
 }
 
 
 
 // انشاء زرار للادمن يوديني صفحة الادمن
-// function goAdmin(){
-//     let email = JSON.parse(localStorage.getItem('currentUser'))
-//     let Bahaa = email.email
-//     if(Bahaa === "bahaa.hassan.m@gmail.com"){
-//         let btn = document.querySelector('.floating-buttons')
+function goAdmin(){
+    let email = JSON.parse(localStorage.getItem('currentUser'))
+    let Bahaa = email.email
+    if(Bahaa === "bahaa.hassan.m@gmail.com"){
+        let btn = document.querySelector('.floating-buttons')
     
-//         let createBtn = document.createElement('button')
-//         createBtn.className = 'admin'
-//         createBtn.id = 'admin'
-//         let icon = document.createElement('i')
-//         icon.className = "fa-solid fa-gear"
+        let createBtn = document.createElement('button')
+        createBtn.className = 'admin'
+        createBtn.id = 'admin'
+        let icon = document.createElement('i')
+        icon.className = "fa-solid fa-gear"
     
-//         createBtn.appendChild(icon)
-//         btn.appendChild(createBtn)
+        createBtn.appendChild(icon)
+        btn.appendChild(createBtn)
 
-//         createBtn.onclick = function(){
-//             location.assign('../HTML/dashbord.html')
-//         }
-//     }
-//     else{
-//         console.log(',,,')
-//     }
-// }
-// goAdmin();
+        createBtn.onclick = function(){
+            location.assign('../HTML/dashbord.html')
+        }
+    }
+    else{
+        console.log(',,,')
+    }
+}
+goAdmin();
 
 
 
@@ -443,12 +442,12 @@ function showCancelledBooking(){
 showCancelledBooking();
 
 // زرار اعادة الحجز
-function returnBooking(i){
+// function returnBooking(i){
     
-    // console.log(locCancelled[i])
-    // console.log(i)
-    // localStorage.setItem('clickRest' , JSON.stringify(ratingObj[i]))
-}
+//     // console.log(locCancelled[i])
+//     // console.log(i)
+//     // localStorage.setItem('clickRest' , JSON.stringify(ratingObj[i]))
+// }
 
 // عرض الحجوزات اللي انتهت
 let locCompleted = JSON.parse(localStorage.getItem("completed"))
