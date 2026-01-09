@@ -1,0 +1,859 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #f8f9fa;
+}
+:root {
+    --primary-color: #FF6B6B;
+    --secondary-color: #4ECDC4;
+    --accent-color: #FFD166;
+    --dark-color: #2D3047;
+    --light-color: #F7F9FC;
+    --success-color: #06D6A0;
+    --warning-color: #FFD166;
+    --danger-color: #EF476F;
+    --info-color: #118AB2;
+    --card-bg: #FFFFFF;
+    --shadow-color: rgba(45, 48, 71, 0.1);
+    --border-radius: 12px;
+    --padding-left-right:20px;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* الهيدر */
+header{
+    background-color: var(--dark-color);
+    width: 100%;
+    height: 80px;
+    padding: 20px ;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.icon-bar{
+    display: none;
+    color: var(--accent-color);
+    font-size: 30px;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.icon-bar:hover{
+    transform: rotate(90deg);
+}
+nav .logo{
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+nav .logo i{
+    font-size: 25px;
+}
+
+/* البحث */
+
+nav .search{
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+}
+
+nav .search input{
+    width: 350px;
+    height: 35px;
+    border-radius: 115px;
+    padding: 22px 12px;
+    outline: none;
+    color: white;
+    background-color: #404463;
+    border: 1px solid transparent;
+    transition:  1s ease ;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+nav .search input:focus{
+    border: 1px solid var(--accent-color);
+}
+
+nav .search button{
+    border-radius: 140px;
+    padding: 13px 13px;
+    border: none;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+nav .search button:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 1px 10px 0px var(--danger-color);
+}
+
+nav .search button i{
+    margin-left: 2px;
+}
+nav .search .search-restaurant{
+    position: absolute;
+    bottom: -80px;
+    right: 0;
+    top: 58px;
+    display: none;
+    width: 350px;
+}
+nav .search .search-restaurant ul{
+    background-color: var(--dark-color);
+    border: 2px solid var(--info-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+nav .search .search-restaurant ul li{ 
+    list-style: none;
+    display: flex;
+    border-bottom: 2px solid var(--info-color);
+    transition: .5s ease;
+}
+
+nav .search .search-restaurant ul li:hover{
+    transform: scale(1.1);
+}
+nav .search .search-restaurant ul li a{
+    text-decoration: none;
+    display: flex;
+    gap: 15px;
+}
+nav .search .search-restaurant ul li a img{
+    width: 60px;
+    height: 70px;
+    border-radius: 0 5px 5px 0;
+}
+nav .search .search-restaurant ul li a h3{
+    margin-top: 10px;
+    color: white;
+}
+
+/* تسجيل الدخول وانشاء حساب */
+
+nav .nav-left a{
+    padding: 12px 20px;
+    cursor: pointer;
+    border: 2px solid var(--accent-color);
+    background-color: var(--dark-color);
+    color: var(--accent-color);
+    font-size: 16px;
+    margin: -1px 10px;
+    border-radius: 12px;
+    transition:  .5s ease;
+    display: inline-flex;
+    text-decoration: none;
+}
+
+nav .nav-left a:hover{
+    transform: translatey(-5px);
+}
+
+nav .nav-left a i{
+    margin-left: 5px;
+}
+
+/*لو المستخدم سجل دخول */
+
+.after-login .user{
+    color: var(--accent-color);
+    font-size: 20px;
+    display: flex;
+    align-items: baseline;
+    left: 20px;
+    top: 34px;
+    position: fixed;
+}
+.after-login .user .name{
+    display: flex;
+    margin-left: 20px;
+}
+.after-login a{
+    color: var(--accent-color);
+    border: none;
+    text-decoration-line: none;
+
+}
+.after-login h4{
+        font-size: 15px;
+    }
+
+.after-login i{
+    margin-left: 5px;
+    transition: .5s ease;
+    cursor: pointer;
+}
+.after-login .fa-right-from-bracket{
+    margin-right: 20px;
+}
+
+.after-login i:hover{
+    transform: scale(1.2);
+}
+.after-login strong{
+    margin-left: 5px;
+}
+
+/* القسم اللي بعد الهيدر */
+
+.hero{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(45, 48, 71, 0.9), rgba(45, 48, 71, 0.7));
+    text-align: center;
+    margin-top: 120px;
+    color: white;
+    padding-bottom: 40px;
+
+}
+.hero h2{
+    font-size: 60px;
+    padding: 60px 10px 15px;
+}
+.hero p{
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+.hero .two-button a{
+    padding: 13px 32px;
+    border-radius: 12px;
+    border: none;
+    outline: navajowhite;
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    margin: 20px 5px 20px 5px;
+    transition: .5s ease;
+    display: inline-block;
+    text-decoration: none;
+
+}
+.hero .two-button a:hover{
+    transform: translatey(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.hero .two-button a i{
+    margin-left: 4px;
+}
+.hero .two-button .btn-primary{
+    background-color: var(--primary-color);
+    
+}
+.hero .two-button .btn-secondary{
+    background-color: var(--secondary-color);
+}
+
+.hero .information-website{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    width: 60%;
+    margin: 40px auto;
+    border-radius: 12px;
+    gap: 50px;
+}
+.hero .information-website .inf-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+.hero .information-website .inf-box i{
+    font-size: 30px;
+    color: var(--accent-color);
+}
+.hero .information-website .inf-box .number,
+.hero .information-website .inf-box #count-restaurants{
+    font-size: 40px;
+    font-weight: bold;
+}
+.hero .information-website .inf-box .text{
+    font-size: 30px;
+}
+
+/* قسم كيف يعمل الموقع */
+
+.how-it-work{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.how-it-work .head{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.how-it-work .head h2{
+    color: var(--dark-color);
+    font-size: 50px;
+}
+
+.how-it-work .head p{
+    color: #666;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.how-it-work .steps-all {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+    margin: 40px 20px;
+}
+.how-it-work .steps-all .step-card{
+    background-color: white;
+    position: relative;
+    padding: 30px;
+    border-radius: 12px;
+    transition: .5s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.how-it-work .steps-all .step-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+.how-it-work .steps-all .step-card .step-number{
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+}
+.how-it-work .steps-all .step-card i{
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+.how-it-work .steps-all .step-card h3{
+    font-size: 25px;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+.how-it-work .steps-all .step-card p{
+    font-size: 18px;
+    color: #666;
+}
+
+/* المطاعم المتاحة */
+
+.restaurant-section{
+    margin: 60px 20px;
+}
+.restaurant-section .head{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.restaurant-section .head h2{
+    color: var(--dark-color);
+    font-size: 50px;
+}
+.restaurant-section .head h2 i{
+    color: #ffc107;
+}
+.restaurant-section .head p{
+    color: #666;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.restaurant-all{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+.restaurant-all .restaurant-box{
+    background-color: white;
+    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: .5s ease;
+}
+.restaurant-all .restaurant-box:hover{
+    transform: translatey(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.restaurant-all .restaurant-box img{
+    width: 100%;
+    border-radius: 12px 12px 0 0 ;
+    transition: .5s ease;
+}
+.restaurant-all .restaurant-box .restaurant-desc{
+    padding: 20px;
+}
+.restaurant-all .restaurant-box .restaurant-desc h3{
+    color: var(--dark-color);
+    margin: 0 10px 10px 10px;
+    font-size: 25px;
+}
+.restaurant-all .restaurant-box .restaurant-desc .data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.restaurant-all .restaurant-box .restaurant-desc .data i{
+    color: var(--primary-color);
+}
+.restaurant-all .restaurant-box .restaurant-desc .data span{
+    color: #666;
+}
+.restaurant-all .restaurant-box .restaurant-desc .rating{
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+.restaurant-all .restaurant-box .restaurant-desc p{
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.restaurant-all .restaurant-box .restaurant-desc .btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.restaurant-all .restaurant-box .restaurant-desc .btns button{
+    padding: 11px 45px;
+    font-size: 17px;
+    border-radius: 12px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.restaurant-all .restaurant-box .restaurant-desc .btns button:hover{
+    transform: translatey(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.restaurant-all .restaurant-box .restaurant-desc .btns .btn-details{
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    background-color: white;
+}
+.restaurant-all .restaurant-box .restaurant-desc .btns .btn-booking{
+    background-color: var(--primary-color);
+    color: white;
+    
+}
+
+.restaurant-section .view-all-restaurant{
+    text-align: center;
+    margin: 60px 0 90px;
+}
+.restaurant-section .view-all-restaurant a{
+    text-decoration: none;
+    font-size: 24px;
+    padding: 21px 42px;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 18px;
+    transition:  .5s ease;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.restaurant-section .view-all-restaurant a:hover{
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.30);
+}
+/* قسم لماذا تختار موقعنا */
+
+.website-features {
+    margin: 20px 20px 80px 20px;
+}
+
+.website-features .head{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.website-features .head h2{
+    color: var(--dark-color);
+    font-size: 37px;
+}
+.website-features .steps-all {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+.website-features .steps-all .step-card{
+    background-color: white;
+    position: relative;
+    padding: 30px;
+    border-radius: 12px;
+    transition: .5s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.website-features .steps-all .step-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+.website-features .steps-all .step-card i{
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+.website-features .steps-all .step-card h3{
+    font-size: 25px;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+.website-features .steps-all .step-card p{
+    font-size: 18px;
+    color:  #666;
+}
+
+/* الفوتر */
+footer{
+    background-color: var(--dark-color);
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px , 1fr));
+    justify-content: center;
+    gap: 20px;
+    padding: 60px 0;
+}
+.footer h2{
+    color: white;
+    margin-bottom: 20px;
+}
+.footer .about-site{
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+}
+.footer .about-site p{
+    margin-bottom: 30px;
+}
+.footer .about-site div{
+    margin-bottom: 10px;
+}
+
+
+.footer a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 16px;
+    transition: .3s ease;
+}
+.footer a:hover{
+    color: var(--accent-color);
+}
+.footer li{
+    list-style: none;
+    margin-bottom: 15px;
+    transition: .3s ease;
+}
+.footer li:hover{
+    transform: translateX(-5px);
+}
+
+p{
+    word-spacing: 1px;
+    line-height: 1.9;
+}
+.footer-end{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* الازرار العائمة */
+
+.floating-buttons{
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 99;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.floating-buttons button{
+    background-color: red ;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+    transition: .5s ease;
+}
+.floating-buttons button:first-child{
+    background-color: var(--primary-color);
+}
+.floating-buttons button:nth-child(2){
+    background-color: #25D366;
+}
+.floating-buttons button:last-of-type{
+    background-color: white;
+    color: var(--dark-color);
+}
+.floating-buttons a:hover , .floating-buttons button:hover{
+    transform: scale(1.15);
+}
+.floating-buttons button.mood{
+    background-color: var(--dark-color);
+    color: white;
+}
+
+
+@media(max-width:970px){
+    nav span{
+        display: none;
+    }
+    nav .search{
+        flex-grow: 1;
+        margin-right: 100px;
+    }
+    nav .search input{
+        width: 220px;
+    }
+    nav .search .search-restaurant{
+        width: 220px;
+    }
+    
+}
+@media(max-width:700px){
+
+}
+@media(max-width:767px){
+    nav .search{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    nav .search .search-restaurant {
+        width: 220px;
+        top: 100px;
+    }
+    .nav{
+        display: none;
+        flex-direction: column;
+        margin-top: 40px;
+        gap: 20px;
+        background-color: var(--dark-color);
+        width: 250px;
+        position: absolute;
+        right: 0;
+        top: 10px;
+        height: 93vh;
+        text-align: center;
+        transition: 1s ease;
+    }
+    nav .logo{
+        margin-top: 20px;
+        font-size: 12px;
+    }
+    nav .search{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-left{
+        margin-bottom: 20px;
+    }
+    nav .nav-left a{
+        margin-bottom: 10px;
+        width: 100%;
+        border: none;
+        margin-right: 0px;
+        border-bottom: 2px solid var(--accent-color);
+        border-radius: 0;
+        display: flex;
+        justify-content: center;
+    }
+    header{
+        height: 50px;
+    }
+    .icon-bar{
+        display: block;
+    }
+    nav .nav-left a span{
+        display: flex;
+    }
+    .after-login{
+        position: absolute;
+        left: 20px;
+        top: 13px;
+    }
+    nav .search button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+    header{
+        height: 50px;
+    }
+    .icon-bar{
+        display: flex;
+    }
+    nav span{
+        display: block;
+    }
+    .after-login .user{
+        top: 15px;
+    }
+}
+
+@media(max-width:577px){
+    .hero{
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+    .how-it-work .head h2{
+        font-size: 40px;
+    }
+    .hero h2 {
+        font-size: 30px;
+    }
+    .restaurant-all{
+        grid-template-columns: repeat(auto-fill,minmax(330px , 1fr));
+    }
+    .restaurant-all .restaurant-box .restaurant-desc .btns .btn-details{
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+    .restaurant-all .restaurant-box .restaurant-desc .btns button {
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+    .website-features .head h2 {
+        font-size: 30px;
+    }
+    .footer{
+        text-align: center;
+        gap: 40px;
+    }
+    .footer li:hover{
+        transform: translatey(-4px);
+    }
+    .restaurant-section .head h2{
+        font-size: 40px;
+    }
+    .website-features .steps-all {
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+}
+}
+.active{
+    display: flex;
+}
+.dark{
+    background-color: black;
+}
+
+#transparent{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    z-index: 9999;
+    height: 100%;
+    display: none;
+}
+#alert{
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: var(--card-bg);
+    color: var(--danger-color);
+    padding: 20px 25px;
+    min-width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 25px;
+    z-index: 9999;
+    transition: 0.3s ease;
+    border: 4px solid var(--primary-color);
+    animation-name: alert;
+    animation-duration: .6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes alert {
+    25%{
+        border-top: 4px solid var(--dark-color);
+    }
+    50%{
+        border-right: 4px solid var(--dark-color);
+    }
+    75%{
+        border-bottom: 4px solid var(--dark-color);
+    }
+    100%{
+    border-left: 4px solid var(--dark-color);
+    }
+}
+#alert #close-alert{
+    position: absolute;
+    top: -19px;
+    right: -19px;
+    background: var(--primary-color);
+    padding: 10.5px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--light-color);
+    cursor: pointer;
+    transition: .5s ease;
+}
+#alert #close-alert:hover{
+    transform: scale(1.08);
+}

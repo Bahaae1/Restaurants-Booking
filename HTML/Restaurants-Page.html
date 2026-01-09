@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Restaurants-Page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>المطاعم</title>
+</head>
+<body>
+    <header>
+        <nav>
+
+            <div class="logo">
+                <i class="fa-solid fa-utensils"></i>
+                <h1>حجز مطاعم</h1>
+            </div>
+
+            <div class="icon-active">
+                <div class="icon">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>اختيار المطعم</span>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>إدخال البيانات</span>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-credit-card"></i>
+                    <span>الدفع</span>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-check-circle"></i>
+                    <span>التأكيد</span>
+                </div>
+            </div>
+
+            <div class="icon-bell">
+                <i onclick="goLogin()" class="fa-solid fa-right-to-bracket " title="تسجيل الدخول"></i>
+                <!-- <i class="fa-solid fa-bell"></i> -->
+                <i onclick="goLogin()" class="fa-solid fa-user-plus" title="انشاء حساب"></i>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <section>
+        
+        <div class="head">
+            <h2>
+                <i class="fas fa-utensils"></i>
+                اختر مطعمك المفضل
+            </h2>
+            <p>تصفح مجموعة مختارة من أفضل المطاعم في منطقتك واحجز طاولتك بكل سهولة</p>
+        </div>
+        
+        <div class="filters">
+
+            <div class="types filter-box">
+                <label for="type">
+                    <i class="fas fa-utensils"></i>
+                    نوع المطبخ
+                </label>
+                <select onchange="searchType()" name="type" id="type">
+                    <option selected value="جميع الانواع">جميع الانواع</option>
+                    <option value="سوري">سوري</option>
+                    <option value="فرايد تشكن">فرايد تشكن</option>
+                    <option value="بيتي">بيتي</option>
+                    <option value="كافيه">كافيه</option>
+                </select>
+            </div>
+
+            <div class="map filter-box">
+                <label for="map">
+                    <i class="fas fa-map-marker-alt"></i>
+                    الموقع
+                </label>
+                <select onchange="searchLocation()" name="map" id="map">
+                    <option selected value="جميع المناطق">جميع المناطق</option>
+                    <option value="المنيا">المنيا</option>
+                    <option value="المنيا الجديدة">المنيا الجديدة</option>
+                    <option value="مغاغة">مغاغة</option>
+                    <option value="بني مزار">بني مزار</option>
+                    <option value="سمالوط">سمالوط</option>
+                </select>
+            </div>
+
+            <div class="price filter-box">
+                <label for="price">
+                    <i class="fas fa-money-bill-wave"></i>
+                    نطاق الاسعار
+                </label>
+                <select onchange="searchPrice()" name="price" id="price">
+                    <option selected value="جميع الاسعار">جميع الاسعار</option>
+                    <option value="فاخر">فاخر</option>
+                    <option value="متوسط">متوسط</option>
+                    <option value="اقتصادي">اقتصادي</option>
+                </select>
+            </div>
+
+            <!-- <div class="sort-by filter-box">
+                <label for="sort-by">
+                    <i class="fas fa-sort-amount-down"></i>
+                    الترتيب
+                </label>
+                <select name="sort-by" id="sort-by">
+                    <option selected value="الترتيب الافتراضي">الترتيب الافتراضي</option>
+                    <option value="">الاعلى سعرا</option>
+                    <option value="">الاقل سعرا</option>
+                    <option value="">الاعلى تقييما</option>
+                    <option value=""> الترتيب بالاسم ( أ - ي )</option>
+                </select>
+            </div> -->
+
+        </div>
+        
+        <!-- <div id="button-search">
+            <button>بحث</button>
+            <button>تصفية</button>
+        </div> -->
+
+
+
+        <div class="restaurant-section" id="restaurant-section">
+            <div class="head">
+                <h2>
+                    <i class="fas fa-store"></i>
+                    المطاعم المتاحة
+                </h2>
+                <p>اختر من بين أفضل المطاعم في منطقتك</p>
+            </div>
+
+            <div class="restaurant-all">
+                <!-- <div class="restaurant-box">
+                    <img src="../images/freekeh.webp" alt="">
+
+                    <div class="restaurant-desc">
+                        <h3>فريكة - Freekeh</h3>
+
+                        <div class="data">
+                            <div class="map">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>المنيا</span>
+                            </div>
+
+                            <div class="type">
+                                <i class="fas fa-utensils"></i>
+                                <span>سوري</span>
+                            </div>
+
+                            <div class="price">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>مرتفعة</span>
+                            </div>
+                        </div>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+
+                        <p>مطعم سوري راقٍ في المنيا، يقدم تجربة أصيلة لأطباق المزة والمشاوي الشهية محضرة باحترافية عالية مع أجواء دمشقية أصيلة.سرعة الخدمة , مقاعد مريحة , توصيل , مناسب للعائلات</p>
+
+                        <div class="btns">
+                            <a class="btn-details">
+                                <i class="fas fa-info-circle"></i>
+                                <span>التفاصيل</span>
+                            </a>
+
+                            <a class="btn-booking">
+                                <i class="fas fa-calendar-plus"></i>
+                                <span>احجز الان</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+             <div class="restaurant-box">
+                    <img src="../images/freekeh.webp" alt="">
+
+                    <div class="restaurant-desc">
+                        <h3>فريكة - Freekeh</h3>
+
+                        <div class="data">
+                            <div class="map">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>المنيا</span>
+                            </div>
+
+                            <div class="type">
+                                <i class="fas fa-utensils"></i>
+                                <span>سوري</span>
+                            </div>
+
+                            <div class="price">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>مرتفعة</span>
+                            </div>
+                        </div>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+
+                        <p>مطعم سوري راقٍ في المنيا، يقدم تجربة أصيلة لأطباق المزة والمشاوي الشهية محضرة باحترافية عالية مع أجواء دمشقية أصيلة.سرعة الخدمة , مقاعد مريحة , توصيل , مناسب للعائلات</p>
+
+                        <div class="btns">
+                            <a class="btn-details">
+                                <i class="fas fa-info-circle"></i>
+                                <span>التفاصيل</span>
+                            </a>
+
+                            <a class="btn-booking">
+                                <i class="fas fa-calendar-plus"></i>
+                                <span>احجز الان</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="restaurant-box">
+                    <img src="../images/freekeh.webp" alt="">
+
+                    <div class="restaurant-desc">
+                        <h3>فريكة - Freekeh</h3>
+
+                        <div class="data">
+                            <div class="map">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>المنيا</span>
+                            </div>
+
+                            <div class="type">
+                                <i class="fas fa-utensils"></i>
+                                <span>سوري</span>
+                            </div>
+
+                            <div class="price">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>مرتفعة</span>
+                            </div>
+                        </div>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+
+                        <p>مطعم سوري راقٍ في المنيا، يقدم تجربة أصيلة لأطباق المزة والمشاوي الشهية محضرة باحترافية عالية مع أجواء دمشقية أصيلة.سرعة الخدمة , مقاعد مريحة , توصيل , مناسب للعائلات</p>
+
+                        <div class="btns">
+                            <a class="btn-details">
+                                <i class="fas fa-info-circle"></i>
+                                <span>التفاصيل</span>
+                            </a>
+
+                            <a class="btn-booking">
+                                <i class="fas fa-calendar-plus"></i>
+                                <span>احجز الان</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="restaurant-box">
+                    <img src="../images/freekeh.webp" alt="">
+
+                    <div class="restaurant-desc">
+                        <h3>فريكة - Freekeh</h3>
+
+                        <div class="data">
+                            <div class="map">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>المنيا</span>
+                            </div>
+
+                            <div class="type">
+                                <i class="fas fa-utensils"></i>
+                                <span>سوري</span>
+                            </div>
+
+                            <div class="price">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>مرتفعة</span>
+                            </div>
+                        </div>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+
+                        <p>مطعم سوري راقٍ في المنيا، يقدم تجربة أصيلة لأطباق المزة والمشاوي الشهية محضرة باحترافية عالية مع أجواء دمشقية أصيلة.سرعة الخدمة , مقاعد مريحة , توصيل , مناسب للعائلات</p>
+
+                        <div class="btns">
+                            <a class="btn-details">
+                                <i class="fas fa-info-circle"></i>
+                                <span>التفاصيل</span>
+                            </a>
+
+                            <a class="btn-booking">
+                                <i class="fas fa-calendar-plus"></i>
+                                <span>احجز الان</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="restaurant-box">
+                    <img src="../images/freekeh.webp" alt="">
+
+                    <div class="restaurant-desc">
+                        <h3>فريكة - Freekeh</h3>
+
+                        <div class="data">
+                            <div class="map">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>المنيا</span>
+                            </div>
+
+                            <div class="type">
+                                <i class="fas fa-utensils"></i>
+                                <span>سوري</span>
+                            </div>
+
+                            <div class="price">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>مرتفعة</span>
+                            </div>
+                        </div>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+
+                        <p>مطعم سوري راقٍ في المنيا، يقدم تجربة أصيلة لأطباق المزة والمشاوي الشهية محضرة باحترافية عالية مع أجواء دمشقية أصيلة.سرعة الخدمة , مقاعد مريحة , توصيل , مناسب للعائلات</p>
+
+                        <div class="btns">
+                            <a class="btn-details">
+                                <i class="fas fa-info-circle"></i>
+                                <span>التفاصيل</span>
+                            </a>
+
+                            <a class="btn-booking">
+                                <i class="fas fa-calendar-plus"></i>
+                                <span>احجز الان</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="restaurant-box">
+                    <img src="../images/../images/freekeh.webp" alt="">
+
+                    <div class="restaurant-desc">
+                        <h3>فريكة - Freekeh</h3>
+
+                        <div class="data">
+                            <div class="map">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>المنيا</span>
+                            </div>
+
+                            <div class="type">
+                                <i class="fas fa-utensils"></i>
+                                <span>سوري</span>
+                            </div>
+
+                            <div class="price">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>مرتفعة</span>
+                            </div>
+                        </div>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+
+                        <p>مطعم سوري راقٍ في المنيا، يقدم تجربة أصيلة لأطباق المزة والمشاوي الشهية محضرة باحترافية عالية مع أجواء دمشقية أصيلة.سرعة الخدمة , مقاعد مريحة , توصيل , مناسب للعائلات</p>
+
+                        <div class="btns">
+                            <a class="btn-details">
+                                <i class="fas fa-info-circle"></i>
+                                <span>التفاصيل</span>
+                            </a>
+
+                            <a class="btn-booking">
+                                <i class="fas fa-calendar-plus"></i>
+                                <span>احجز الان</span>
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+
+
+            </div>
+
+            <p class="restaurant-count">عرض <span>6</span> من <span>6</span> مطاعم</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <div class="about-site">
+                <h2>عن حجز مطاعم</h2>
+                <p>منصة رائدة في مجال حجز المطاعم في مصر، نسعى لتقديم أفضل تجربة حجز للعملاء وأفضل حلول إدارة للمطاعم.</p>
+                <div>
+                    <i class="fas fa-building"></i>
+                    <span>شركة حجز مطاعم اونلاين</span>
+                </div>
+
+                <div>
+                    <i class="fas fa-id-card"></i>
+                    <span>السجل التجاري: 123456</span>
+                </div>
+
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>المنيا، مصر</span>
+                </div>
+
+            </div>
+
+            <div class="links">
+                <h2>روابط سريعة</h2>
+                <ul>
+                    <li>
+                        <a href="../HTML/Home-Page.html">
+                            <i class="fas fa-home"></i>
+                            <span>الرئيسية</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../HTML/Restaurants-Page.html">
+                            <i class="fas fa-utensils"></i>
+                            <span>المطاعم</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-user"></i>
+                            <span>الملف الرئيسي</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-file-alt"></i>
+                            <span>الشروط والاحكام</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>سياسة الخصوصية</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="services">
+                <h2>خدماتنا</h2>
+                <ul>
+                    <li>
+                        <a href="../HTML/Restaurants-Page.html">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>حجز المطاعم</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="follow-us">
+                <h2>تابعنا</h2>
+                <ul>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-linkedin"></i>
+                            <span>Linkedin</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-tiktok"></i>
+                            <span>TikTok</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-end">
+            <p>© 2025  <strong>حجز مطاعم</strong>. جميع الحقوق محفوظة.</p>
+            <p>تم التطوير بواسطة <strong>Bahaa Hassan</strong>  | التصميم: <strong>Bahaa Hassan</strong></p>
+        </div>
+    </footer>
+
+    <div id="transparent">
+        <div id="alert">
+            <span id="alert-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui voluptate beatae iste! Repellendus necessitatibus ea rem explicabo! Laudantium quia quos iusto earum quas reiciendis, doloribus praesentium tempora, natus quasi ipsa.</span>
+            <span id="close-alert">X</span>
+        </div>
+    </div>
+
+    <script src="../JS/Restaurants-Page.js"></script>
+</body>
+</html>

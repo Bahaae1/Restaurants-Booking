@@ -1,0 +1,589 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #f8f9fa;
+}
+:root {
+    --primary-color: #FF6B6B;
+    --secondary-color: #4ECDC4;
+    --accent-color: #FFD166;
+    --dark-color: #2D3047;
+    --light-color: #F7F9FC;
+    --success-color: #06D6A0;
+    --warning-color: #FFD166;
+    --danger-color: #EF476F;
+    --info-color: #118AB2;
+    --card-bg: #FFFFFF;
+    --shadow-color: rgba(45, 48, 71, 0.1);
+    --border-radius: 12px;
+    --padding-left-right:20px;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* الهيدر */
+header{
+    background-color: var(--dark-color);
+    width: 100%;
+    height: 80px;
+    padding: 20px 40px;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.icon-bar{
+    display: none;
+    color: var(--accent-color);
+    font-size: 30px;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.icon-bar:hover{
+    transform: translateX(-5px);
+}
+nav .logo{
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav .logo i{
+    font-size: 25px;
+}
+
+/* الذهاب الى الصفحة الئيسية*/
+
+nav .go-home {
+    padding: 12px 20px;
+    cursor: pointer;
+    border: 2px solid var(--accent-color);
+    background-color: var(--dark-color);
+    color: var(--accent-color);
+    font-size: 16px;
+    margin: -1px 10px;
+    border-radius: 12px;
+    transition:  .5s ease;
+    display: inline-flex;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav .go-home:hover{
+    transform: translatey(-5px);
+}
+
+nav .go-home i{
+    margin-left: 5px;
+}
+
+/*  */
+
+section{
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    background: linear-gradient(rgba(45, 48, 71, 0.9), rgba(45, 48, 71, 0.7)), url(../images/background-page-login.avif);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.login{
+    width: 500px;
+    margin: auto;
+    padding-top: 120px;
+    padding-bottom: 80px;
+    border-radius: 20px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
+
+.login .head{
+    text-align: center;
+    color: white;
+    background:  linear-gradient(135deg, var(--dark-color), #3A3E64);;
+    padding: 30px;
+        border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    
+}
+.login .head h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+/* الزرارين بتاع تسجيل الدخول */
+
+.two-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #666;
+    background-color: #e0e0e0;
+}
+
+.two-button button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 50%;
+    padding: 17px 30px;
+    border: none;
+    color: #666;
+    border-bottom: 1px solid var(--card-bg);
+    cursor: pointer;
+    transition: .5s ease;
+}
+.two-button .active{
+    background-color: white;
+    color: var(--primary-color);
+    border-bottom:4px solid var(--primary-color);
+}
+.two-button i{
+    font-size: 20px;
+}
+
+
+/* الفورم */
+.two-forms{
+    background-color: white;
+    padding: 20px 30px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.two-forms .login-form .login-email label,
+.two-forms .login-form .login-password label {
+    color: var(--dark-color);
+    font-size: 20px;
+    display: inline-block;
+    margin: 20px 0 5px;
+}
+.two-forms .login-form .login-email input,
+.two-forms .login-form .login-password input{
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    font-size: 16px;
+    outline: none;
+}
+.two-forms .show-password{
+    position: relative;
+}
+.two-forms .show-password i{
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.two-forms .show-password i:hover{
+    color: var(--primary-color);
+}
+.two-forms .login-form input:focus{
+    border: 2px solid var(--primary-color);
+}
+
+.two-forms .login-form .forgat-password{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    font-size: 17px;
+    align-items: center;
+}
+.two-forms .login-form .forgat-password input{
+    height: 13px;
+    cursor: pointer;
+}
+.two-forms .login-form .forgat-password label{
+    cursor: pointer;
+}
+.two-forms .login-form .forgat-password a{
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: text-decoration .4s;
+}
+.two-forms .login-form .forgat-password a:hover{
+    text-decoration: underline;
+}
+.two-forms .login-form button{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 20px;
+    margin-bottom: 35px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.two-forms .login-form button:hover{
+    transform: translatey(-5px);
+    box-shadow: 0 8px 20px  rgba(0, 0, 0, 0.15);
+}
+
+.two-forms .login-form p{
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #e0e0e0;
+    font-size: 18px;
+    color: var(--dark-color);
+}
+
+.two-forms .login-form .login-social{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    gap: 10px;
+    border-bottom: 1px solid #e0e0e0;
+
+}
+.two-forms .login-form .login-social button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    transition: .5s ease;
+}
+.two-forms .login-form .login-social button:first-child{
+        color: #1877F2;
+}
+.two-forms .login-form .login-social button:nth-child(2){
+        color: #DB4437;
+}
+.two-forms .login-form .login-social button:last-child{
+    color: #1DA1F2;
+}
+.two-forms .login-form .login-social button:hover{
+    transform: translatey(-5px);
+    box-shadow: 0 8px 20px  rgba(0, 0, 0, 0.15);
+}
+
+.two-forms .login-form .footer-login .not-account{
+    text-align: center;
+    margin-top: 15px ;
+    border: none;
+}
+.two-forms .login-form .footer-login .not-account a{
+    color: var(--primary-color);
+    cursor: pointer;
+    text-decoration: none;
+}
+.two-forms .login-form .footer-login .not-account a:hover{
+    text-decoration: underline;
+}
+
+
+/* فورم انشاء حساب */
+.two-forms .create-account-form{
+    display: none;
+}
+.two-forms .create-account-form  label {
+    color: var(--dark-color);
+    font-size: 20px;
+    display: inline-block;
+    margin: 20px 0 5px;
+}
+.two-forms .create-account-form  input{
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    font-size: 16px;
+    outline: none;
+}
+.two-forms .create-account-form input:focus{
+    border: 2px solid var(--primary-color);
+}
+
+.two-forms .create-account-form .conditions input{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+.two-forms .create-account-form .conditions label{
+    cursor: pointer;
+    font-size: 17px;
+}
+.two-forms .create-account-form .conditions label a{
+    
+    transition: .4s ease;
+}
+.two-forms .create-account-form .conditions label a:hover{
+    color: var(--primary-color);
+}
+
+
+.two-forms .create-account-form button{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 20px;
+    margin-bottom: 35px;
+    cursor: pointer;
+    transition: .5s ease;
+    margin-top: 20px;
+}
+.two-forms .create-account-form button:hover{
+    transform: translatey(-5px);
+    box-shadow: 0 8px 20px  rgba(0, 0, 0, 0.15);
+}
+
+.two-forms .create-account-form p{
+    text-align: center;
+    padding: 28px 0 0;
+    border-top: 1px solid #e0e0e0;
+    font-size: 18px;
+    color: var(--dark-color);
+}
+.two-forms .create-account-form p a{
+    margin-right: 4px;
+    transition: .4s ease;
+}
+.two-forms .create-account-form p a:hover{
+    color: var(--primary-color);
+}
+
+.two-forms .create-account-form .login-social{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #e0e0e0;
+
+}
+
+.two-forms .create-account-form .login-social button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    transition: .5s ease;
+}
+.two-forms .create-account-form .login-social button:first-child{
+        color: #1877F2;
+}
+.two-forms .create-account-form .login-social button:nth-child(2){
+        color: #DB4437;
+}
+.two-forms .create-account-form .login-social button:last-child{
+    color: #1DA1F2;
+}
+.two-forms .create-account-form .login-social button:hover{
+    transform: translatey(-5px);
+    box-shadow: 0 8px 20px  rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* الفوتر */
+footer{
+    background-color: var(--dark-color);
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px , 1fr));
+    justify-content: center;
+    gap: 20px;
+    padding: 60px 0;
+}
+.footer h2{
+    color: white;
+    margin-bottom: 20px;
+}
+.footer .about-site{
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+}
+.footer .about-site p{
+    margin-bottom: 30px;
+}
+.footer .about-site div{
+    margin-bottom: 10px;
+}
+
+
+.footer a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 16px;
+    transition: .3s ease;
+}
+.footer a:hover{
+    color: var(--accent-color);
+}
+.footer li{
+    list-style: none;
+    margin-bottom: 15px;
+    transition: .3s ease;
+}
+.footer li:hover{
+    transform: translateX(-5px);
+}
+
+p{
+    word-spacing: 1px;
+    line-height: 1.9;
+}
+.footer-end{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+@media(max-width:769px){
+    .login{
+        width: 90%;
+    }
+    header{
+    padding: 20px 20px;
+    }
+    .footer{
+        text-align: center;
+        gap: 40px;
+    }
+    .footer li:hover{
+        transform: translatey(-4px);
+    }
+    nav .logo{
+        font-size: 10px;
+    }
+    nav .go-home{
+        font-size: 13px;
+        padding: 10px;
+    }
+    .two-forms .login-form .login-social button{
+        font-size: 14px;
+        padding: 9px 4px;
+        margin-bottom: 25px;
+    }
+    .two-forms .create-account-form .login-social button{
+        font-size: 14px;
+        padding: 9px 4px;
+        margin-bottom: 25px;
+    }
+    .two-button button{
+        font-size: 12px;
+    }
+    .two-forms .login-form .login-social{
+        padding-top: 0;
+    }
+    .two-forms .create-account-form p{
+        padding-top: 20px;
+    }
+    .two-forms .create-account-form .conditions label{
+        font-size: 14px;
+    }
+    .two-forms .create-account-form .conditions input{
+        width: 12px;
+        height: 12px;
+        accent-color: var(--primary-color);
+    }
+}
+
+#transparent{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    z-index: 9999;
+    height: 100%;
+    display: none;
+}
+#alert{
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: var(--card-bg);
+    color: var(--danger-color);
+    padding: 20px 25px;
+    min-width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 25px;
+    z-index: 9999;
+    transition: 0.3s ease;
+    border: 4px solid var(--primary-color);
+    animation-name: alert;
+    animation-duration: .6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes alert {
+    25%{
+        border-top: 4px solid var(--dark-color);
+    }
+    50%{
+        border-right: 4px solid var(--dark-color);
+    }
+    75%{
+        border-bottom: 4px solid var(--dark-color);
+    }
+    100%{
+    border-left: 4px solid var(--dark-color);
+    }
+}
+#alert #close-alert{
+    position: absolute;
+    top: -19px;
+    right: -19px;
+    background: var(--primary-color);
+    padding: 10.5px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--light-color);
+    cursor: pointer;
+    transition: .5s ease;
+}
+#alert #close-alert:hover{
+    transform: scale(1.08);
+}

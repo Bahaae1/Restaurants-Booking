@@ -1,0 +1,725 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #f8f9fa;
+}
+:root {
+    --primary-color: #FF6B6B;
+    --secondary-color: #4ECDC4;
+    --accent-color: #FFD166;
+    --dark-color: #2D3047;
+    --light-color: #F7F9FC;
+    --success-color: #06D6A0;
+    --warning-color: #FFD166;
+    --danger-color: #EF476F;
+    --info-color: #118AB2;
+    --card-bg: #FFFFFF;
+    --shadow-color: rgba(45, 48, 71, 0.1);
+    --border-radius: 12px;
+    --padding-left-right:20px;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* الهيدر */
+header{
+    background-color: var(--dark-color);
+    width: 100%;
+    height: 80px;
+    padding: 20px 40px;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .logo{
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav .logo i{
+    font-size: 25px;
+}
+/* الذهاب الى الصفحة الئيسية*/
+
+nav .go-home {
+    padding: 12px 15px;
+    cursor: pointer;
+    border: 2px solid var(--accent-color);
+    background-color: var(--dark-color);
+    color: var(--accent-color);
+    font-size: 16px;
+    margin: -1px 10px 0 50px;
+    border-radius: 12px;
+    transition:  .5s ease;
+    display: inline-flex;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav .go-home:hover{
+    transform: translatey(-5px);
+}
+
+.icon-bell i{
+    position: absolute;
+    left: 50px;
+    color: var(--accent-color);
+    top: 33px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.icon-bell i:hover{
+    transform: scale(1.2);
+}
+header .fa-right-from-bracket{
+    position: absolute;
+    left: 15px;
+    color: var(--accent-color);
+    top: 33px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+header .fa-right-from-bracket:hover{
+    transform: scale(1.2);
+    
+}
+
+/* القسم اللي بعد الهيدر */
+
+.hero{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(45, 48, 71, 0.9), rgba(45, 48, 71, 0.7));
+    margin-top: 120px;
+    color: white;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.hero .avatar{
+    width: 100px;
+    height: 100px;
+    background-color: var(--info-color);
+    border-radius: 50%;
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+.hero h2{
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+.hero p{
+    font-size: 20px;
+}
+
+.hero .information-user{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    width: 90%;
+    margin: 40px auto;
+    border-radius: 12px;
+    gap: 50px;
+}
+.hero .information-user .inf-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+.hero .information-user .inf-box i{
+    font-size: 30px;
+    color: var(--accent-color);
+}
+.hero .information-user .inf-box .number{
+    font-size: 40px;
+    font-weight: bold;
+}
+.hero .information-user .inf-box .text{
+    font-size: 19px;
+    color: #ccc;
+}
+
+/* معومات عن حساب المستخدم */
+
+.info-user{
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+    margin: 10px 30px 150px 30px;
+    position: relative;
+}
+.info-account-user{
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px 10px 20px ;
+    box-shadow: 0 0 8px 2px var(--shadow-color);
+}
+.head{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    color: var(--dark-color);
+    font-size: 25px;
+    padding: 15px 30px 17px;
+    border-bottom: 2px solid var(--primary-color);
+}
+.info-account-user ul{
+    margin: 20px 10px;
+}
+.info-account-user ul li{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+.info-account-user ul li i{
+    color: var(--primary-color);
+    font-size: 20px;
+    padding: 14px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+}
+.info-account-user ul li h3{
+    color: var(--dark-color);
+    font-size: 21px;
+    margin-bottom: 9px;
+}
+.info-account-user ul li p{
+    color: #666;
+}
+.info-account-user button{
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    gap: 20px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    width: calc(100% - 65px);
+    margin: 30px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.info-account-user .edit-info-user{
+    background: linear-gradient(135deg, var(--primary-color), #FF8E8E);
+
+}
+.info-account-user button:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.15);
+}
+#transparent{
+    position: fixed;
+    z-index: 999999999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0,0.5);
+    display: none;
+}
+#transparent .info-account-user{
+    position: absolute;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999999999;
+}
+#transparent .info-account-user .two-button{
+    display: flex;
+}
+#transparent .info-account-user .two-button #btn-cancel{
+    background-color: var(--primary-color);
+}
+#transparent .info-account-user .two-button #btn-edit{
+    background-color: var(--success-color);
+}
+#transparent .head{
+    display: flex;
+    justify-content: center;
+}
+#transparent input{
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    outline: none;
+    font-size: 16px;
+}
+#transparent input:focus{
+    outline: #118AB2;
+}
+#transparent ul li span{
+    color: var(--primary-color);
+    margin: 8px 0;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 600;
+    display: none;
+}
+/* في مشكلة هنا */
+
+.head-1{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    color: var(--dark-color);
+    font-size: 25px;
+    padding: 15px 0 17px;
+    border-bottom: 2px solid var(--primary-color);
+}
+.bookings .filters{
+    margin: 20px 0 30px;
+}
+.bookings .filters button{
+    padding: 10px 20px;
+    background-color: white;
+    border: 2px solid #e0e0e0;
+    color: #666;
+    margin-left: 10px;
+    border-radius: 8px;
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+/* .bookings .filters button.active:hover{
+    color: white;
+
+} */
+.bookings .filters button:hover{
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+.bookings .filters button span{
+    font-size: 15px;
+}
+.filters button.active{
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+.filters button.active:hover{
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* الحجز */
+
+.bookings-list .booking-card{
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 4px solid var(--info-color);
+    box-shadow: 0 0 8px 2px var(--shadow-color);
+    transition: .5s ease;
+}
+.bookings-list .coming-card{
+    border-left: 4px solid var(--info-color);
+    
+}
+.bookings-list .completed-card{
+    border-left: 4px solid var(--success-color);
+}
+.bookings-list .cancelled-card{
+    border-left: 4px solid var(--danger-color);
+}
+
+.bookings-list .booking-card:not(:last-child){
+    margin-bottom: 20px;
+}
+.bookings-list .booking-card:hover{
+    transform: translateY(-7px);
+    box-shadow: 0 0 8px 10px var(--shadow-color);
+}
+.booking-card .head-booking-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.booking-card .head-booking-card h3{
+    color: var(--dark-color);
+    font-size: 25px;
+}
+.booking-card .head-booking-card span{
+    padding: 7px 17px;
+    border-radius: 20px;
+    font-size: 16px;
+}
+.booking-card .head-booking-card .coming{
+    background: rgba(17, 138, 178, 0.1);
+    color: var(--info-color);
+}
+.booking-card .head-booking-card .completed{
+    background: rgba(6, 214, 160, 0.1);
+    color: var(--success-color);
+}
+.booking-card .head-booking-card .cancelled{
+        background: rgba(239, 71, 111, 0.1);
+    color: var(--danger-color);
+}
+.booking-card p{
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+.booking-card .booking-details{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-bottom: 20px;
+    gap: 20px;
+}
+.booking-card .booking-details i{
+    color: var(--primary-color);
+    margin-left: 20px;
+}
+.booking-card .booking-details span{
+    font-size: 17px;
+}
+.booking-card .btns button{
+    padding: 10px 25px;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .5s ease;
+    margin-left: 10px;
+}
+.booking-card .btns button:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 0 8px 3px var(--shadow-color);
+}
+.booking-card .btns .btn-outline{
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    background-color: white;
+}
+.booking-card .btns .btn-danger{
+    background-color: var(--danger-color);
+    border: 2px solid var(--danger-color);
+}
+.booking-card .btns .btn-success{
+    background-color: var(--success-color);
+    border: 2px solid var(--success-color);
+}
+
+/* الفوتر */
+footer{
+    background-color: var(--dark-color);
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px , 1fr));
+    justify-content: center;
+    gap: 20px;
+    padding: 60px 0;
+}
+.footer h2{
+    color: white;
+    margin-bottom: 20px;
+}
+.footer .about-site{
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+}
+.footer .about-site p{
+    margin-bottom: 30px;
+}
+.footer .about-site div{
+    margin-bottom: 10px;
+}
+
+
+.footer a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 16px;
+    transition: .3s ease;
+}
+.footer a:hover{
+    color: var(--accent-color);
+}
+.footer li{
+    list-style: none;
+    margin-bottom: 15px;
+    transition: .3s ease;
+}
+.footer li:hover{
+    transform: translateX(-5px);
+}
+
+p{
+    word-spacing: 1px;
+    line-height: 1.9;
+}
+.footer-end{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* الازرار العائمة */
+
+.floating-buttons{
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 99;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.floating-buttons button{
+    background-color: red ;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+    transition: .5s ease;
+}
+.floating-buttons button:first-child{
+    background-color: var(--primary-color);
+}
+.floating-buttons button:nth-child(2){
+    background-color: #25D366;
+}
+.floating-buttons button{
+    background-color: var(--dark-color);
+}
+.floating-buttons a:hover , .floating-buttons button:hover{
+    transform: scale(1.15);
+}
+
+
+
+/*فورم تعديل بيانات الحجز */
+#transparen{
+    position: fixed;
+    z-index: 999999999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0,0.5);
+    display: none;
+}
+#transparen .form{
+    position: absolute;
+    width: 700px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999999999;
+    background-color: white;
+    overflow: auto;
+    border-radius: 20px;
+}
+#transparen .form .grid{
+    padding: 20px 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px , 1fr));
+        gap: 15px;
+}
+#transparen .form .grid select,
+#transparen .form .grid input,
+#transparen .form .grid textarea{
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    outline: none;
+    font-size: 18px;
+}
+
+#transparen .form .grid textarea{
+    height: 110px;
+}
+#transparen .form .grid .nots{
+    grid-column: 1 / -1;
+
+}
+#transparen .form .grid select:focus,
+#transparen .form .grid input:focus{
+    border: 2px solid var(--primary-color);
+}
+#transparen .form .grid label{
+    font-size: 20px;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+    display: block;
+}
+#transparen .form .footer-form{
+    padding: 0 30px 30px 30px;
+}
+#transparen .form .footer-form .accept-role{
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+#transparen .form .footer-form .accept-role label{
+    color: var(--dark-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+#transparen .form .footer-form .accept-role label a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+#transparen .form .footer-form .accept-role input{
+    accent-color: var(--primary-color);
+}
+#transparen .form .footer-form .accept-role p{
+    color: var(--info-color);
+    margin-top: 15px;
+    font-size: 17px;
+}
+#transparen .form .footer-form .btns button{
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+#transparen .form .footer-form .btns button:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+}
+#transparen .form .footer-form .btns .success{
+    background-color: var(--success-color);
+}
+#transparen .form .footer-form .btns .primary {
+    background-color: var(--primary-color);
+    margin-right: 10px;
+}
+#transparen .form .footer-form .help {
+    text-align: center;
+    color: #666;
+    font-size: 20px;
+}
+#transparen .form .footer-form .help a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+
+@media(max-width:980px){
+    .booking-card .btns button {
+        padding: 9px 11px;
+        font-size: 15px;
+        margin-left: 0px;
+    }
+    .bookings .filters button {
+        padding: 10px 15px;
+        margin-left: 0px;
+
+    }
+}
+@media(max-width:840px){
+    .info-user {
+        display: block;
+    }
+    .info-account-user{
+        margin-bottom: 50px;
+    }
+    .footer{
+        text-align: center;
+        gap: 40px;
+    }
+    .footer li:hover{
+        transform: translatey(-4px);
+    }
+    #transparent .info-account-user{
+        width: 400px;
+    }
+}
+@media(max-width:460px){
+    nav .logo i {
+        font-size: 19px;
+    }
+    nav .logo h1 {
+        font-size: 19px;
+    }
+    nav .go-home{
+        padding: 10px;
+        font-size: 15px;
+        margin-left: 80px;
+    }
+    .icon-bell i{
+        top: 30px;
+    }
+    header .fa-right-from-bracket{
+        top: 30px;
+    }
+    header{
+        padding: 20px 10px;
+    }
+    .info-user {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    nav .logo{
+        margin-right: 10px;
+    }
+    .bookings .filters button {
+        padding: 8px 12px;
+    }
+    .booking-card .btns button {
+        padding: 9px 9px;
+        font-size: 13px;
+    }
+    #transparent .info-account-user{
+        width: 320px;
+    }
+    .info-account-user ul li{
+        padding: 5px 0;
+    }
+    .info-account-user ul li h3{
+        margin-bottom: 0;
+    }
+
+}

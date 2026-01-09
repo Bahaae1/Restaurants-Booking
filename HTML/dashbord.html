@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة الادمن</title>
+    <link rel="stylesheet" href="../CSS/dashbord.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="icon-bar">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+
+            <div class="logo">
+                <i class="fa-solid fa-utensils"></i>
+                <h2>ادارة النطام</h2>
+            </div>
+
+            <div class="nav-left">
+
+                <div class="avatar">ب</div>
+
+                <div class="admin">
+                    <h3>الادمن</h3>
+                    <p>مدير النظام</p>
+                </div>
+
+                <a href="../HTML/Home-Page.html">
+                    <i class="fas fa-home"></i>
+                </a>
+
+
+            </div>
+
+
+        </nav>
+    </header>
+
+
+    <section>
+
+        <div class="sidebar">
+            <ul>
+                <li class="active" data-target="control-panel">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>لوحة التحكم</span>
+                </li>
+                <li data-target="bookings">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>إدارة الحجوزات</span>
+                </li>
+                <li data-target="restaurants">
+                    <i class="fas fa-utensils"></i>
+                    <span>إدارة المطاعم</span>
+                </li>
+                <li data-target="users">
+                    <i class="fas fa-users"></i>
+                    <span>إدارة المستخدمين</span>
+                </li>
+                <li class="logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>تسجيل الخروج</span>
+                </li>
+            </ul>
+
+        </div>
+        <div class="content">
+            <div id="control-panel " class="control-panel content-section" style="display: block;">
+                <div class="head">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h2>لوحة التحكم الرئيسية</h2>
+                </div>
+
+                <div class="cards">
+                    <div class="box">
+                        <div class="text">
+                            <h4>إجمالي الحجوزات</h4>
+                            <span id="count-booking">100</span>
+                        </div>
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+    
+                    <div class="box">
+                        <div class="text">
+                            <h4>المطاعم</h4>
+                            <span id="count-restaurants">20</span>
+                        </div>
+                        <i class="fas fa-utensils"></i>
+                    </div>
+    
+                    <div class="box">
+                        <div class="text">
+                            <h4>المستخدمين</h4>
+                            <span id="count-users">135</span>
+                        </div>
+                        <i class="fas fa-users"></i>
+                    </div>
+    
+                    <div class="box">
+                        <div class="text">
+                            <h4>الحجوزات اليوم</h4>
+                            <span id="count-booking-day">7</span>
+                        </div>
+                        <i class="fas fa-bolt"></i>
+                    </div>
+    
+                </div>
+            
+
+            <div class="card-booking">
+
+                <div class="section-header">
+                    <div class="text">
+                        <i class="fas fa-history"></i>
+                        <h2>آخر الحجوزات</h2>
+                    </div>
+                    <button>
+                        <i class="fas fa-eye"></i>
+                        <span>عرض الكل</span>
+                    </button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>رقم الحجز</th>
+                            <th>المطعم</th>
+                            <th>المستخدم</th>
+                            <th>التاريخ</th>
+                            <th>الوقت</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="show-bookings-control">
+                        <!-- <tr>
+                            <td>#1425</td>
+                            <td>مطعم فريكة</td>
+                            <td>أحمد محمد</td>
+                            <td>2025-01-15</td>
+                            <td>1:30</td>
+                            <td class="status-yellow">قيد الانتظار</td>
+                            <td>
+                                <i class="fas fa-check"></i>
+                                <i class="fas fa-times"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#1425</td>
+                            <td>مطعم فريكة</td>
+                            <td>أحمد محمد</td>
+                            <td>2025-01-15</td>
+                            <td>1:30</td>
+                            <td class="status-green">مؤكد</td>
+                            <td>
+                                <i class="fas fa-eye"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#1425</td>
+                            <td>مطعم فريكة</td>
+                            <td>أحمد محمد</td>
+                            <td>2025-01-15</td>
+                            <td>1:30</td>
+                            <td class="status-red">ملغى</td>
+                            <td>
+                                <i class="fas fa-eye"></i>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+
+            </div>
+            </div>
+
+            <div id="bookings" class="bookings">
+                <div class="section-header">
+                    <div class="text">
+                        <i class="fas fa-history"></i>
+                        <h2>آخر الحجوزات</h2>
+                    </div>
+                    <button>
+                        <i class="fas fa-filter"></i>
+                        <span>تصفية</span>
+                    </button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>رقم الحجز</th>
+                            <th>المطعم</th>
+                            <th>المستخدم</th>
+                            <th>التاريخ</th>
+                            <th>الوقت</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="show-bookings">
+                        <!-- <tr>
+                            <td>#1425</td>
+                            <td>مطعم فريكة</td>
+                            <td>أحمد محمد</td>
+                            <td>2025-01-15</td>
+                            <td>1:30</td>
+                            <td class="status-yellow">قيد الانتظار</td>
+                            <td>
+                                <i class="fas fa-check"></i>
+                                <i class="fas fa-times"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#1425</td>
+                            <td>مطعم فريكة</td>
+                            <td>أحمد محمد</td>
+                            <td>2025-01-15</td>
+                            <td>1:30</td>
+                            <td class="status-green">مؤكد</td>
+                            <td>
+                                <i class="fas fa-eye"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#1425</td>
+                            <td>مطعم فريكة</td>
+                            <td>أحمد محمد</td>
+                            <td>2025-01-15</td>
+                            <td>1:30</td>
+                            <td class="status-red">ملغى</td>
+                            <td>
+                                <i class="fas fa-eye"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#1425</td>
+                            <td>مطعم فريكة</td>
+                            <td>أحمد محمد</td>
+                            <td>2025-01-15</td>
+                            <td>1:30</td>
+                            <td class="status-red">ملغى</td>
+                            <td>
+                                <i class="fas fa-eye"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#1425</td>
+                            <td>مطعم فريكة</td>
+                            <td>أحمد محمد</td>
+                            <td>2025-01-15</td>
+                            <td>1:30</td>
+                            <td class="status-green">مؤكد</td>
+                            <td>
+                                <i class="fas fa-eye"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#1425</td>
+                            <td>مطعم فريكة</td>
+                            <td>أحمد محمد</td>
+                            <td>2025-01-15</td>
+                            <td>1:30</td>
+                            <td class="status-red">ملغى</td>
+                            <td>
+                                <i class="fas fa-eye"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#1425</td>
+                            <td>مطعم فريكة</td>
+                            <td>أحمد محمد</td>
+                            <td>2025-01-15</td>
+                            <td>1:30</td>
+                            <td class="status-yellow">قيد الانتظار</td>
+                            <td>
+                                <i class="fas fa-check"></i>
+                                <i class="fas fa-times"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#1425</td>
+                            <td>مطعم فريكة</td>
+                            <td>أحمد محمد</td>
+                            <td>2025-01-15</td>
+                            <td>1:30</td>
+                            <td class="status-yellow">قيد الانتظار</td>
+                            <td>
+                                <i class="fas fa-check"></i>
+                                <i class="fas fa-times"></i>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="restaurants" class="restaurants">
+                <div class="section-header">
+                    <div class="text">
+                        <i class="fas fa-utensils"></i>
+                        <h2>إدارة المطاعم</h2>
+                    </div>
+                    <button id="show-add-restaurants-form">
+                        <i class="fas fa-plus"></i>
+                        <span >إضافة مطعم</span>
+                    </button>
+                </div>
+
+                <table >
+                    <thead>
+                        <tr>
+                            <th>الصورة</th>
+                            <th>اسم المطعم</th>
+                            <th>النوع</th>
+                            <th>الموقع</th>
+                            <th>نطاق الأسعار</th>
+                            <th>التقييم</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody class="add-restaurant-new">
+                        <!-- <tr>
+                            <td><img src="../images/freekeh.webp" alt=""></td>
+                            <td>مطعم فريكة</td>
+                            <td>سوري</td>
+                            <td>المنيا</td>
+                            <td>مرتفعة</td>
+                            <td>
+                                <span>4.5</span>
+                                <i class="fas fa-star"></i>
+                            </td>
+                            <td><strong>نشط</strong></td>
+                            <td>
+                                <i class="fas fa-edit"></i>
+                                <i class="fas fa-trash"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../images/freekeh.webp" alt=""></td>
+                            <td>مطعم فريكة</td>
+                            <td>سوري</td>
+                            <td>المنيا</td>
+                            <td>مرتفعة</td>
+                            <td>
+                                <span>4.5</span>
+                                <i class="fas fa-star"></i>
+                            </td>
+                            <td><strong>نشط</strong></td>
+                            <td>
+                                <i class="fas fa-edit"></i>
+                                <i class="fas fa-trash"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../images/freekeh.webp" alt=""></td>
+                            <td>مطعم فريكة</td>
+                            <td>سوري</td>
+                            <td>المنيا</td>
+                            <td>مرتفعة</td>
+                            <td>
+                                <span>4.5</span>
+                                <i class="fas fa-star"></i>
+                            </td>
+                            <td><strong>نشط</strong></td>
+                            <td>
+                                <i class="fas fa-edit"></i>
+                                <i class="fas fa-trash"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../images/freekeh.webp" alt=""></td>
+                            <td>مطعم فريكة</td>
+                            <td>سوري</td>
+                            <td>المنيا</td>
+                            <td>مرتفعة</td>
+                            <td>
+                                <span>4.5</span>
+                                <i class="fas fa-star"></i>
+                            </td>
+                            <td><strong>نشط</strong></td>
+                            <td>
+                                <i class="fas fa-edit"></i>
+                                <i class="fas fa-trash"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../images/freekeh.webp" alt=""></td>
+                            <td>مطعم فريكة</td>
+                            <td>سوري</td>
+                            <td>المنيا</td>
+                            <td>مرتفعة</td>
+                            <td>
+                                <span>4.5</span>
+                                <i class="fas fa-star"></i>
+                            </td>
+                            <td><strong>نشط</strong></td>
+                            <td>
+                                <i class="fas fa-edit"></i>
+                                <i class="fas fa-trash"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../images/freekeh.webp" alt=""></td>
+                            <td>مطعم فريكة</td>
+                            <td>سوري</td>
+                            <td>المنيا</td>
+                            <td>مرتفعة</td>
+                            <td>
+                                <span>4.5</span>
+                                <i class="fas fa-star"></i>
+                            </td>
+                            <td><strong>نشط</strong></td>
+                            <td>
+                                <i class="fas fa-edit"></i>
+                                <i class="fas fa-trash"></i>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+
+                <div class="form-add-restaurant">
+                    <div class="add-restaurant">
+                        <div class="section-header">
+                            <div class="text">
+                                <i class="fas fa-plus"></i>
+                                <h2>إضافة مطعم جديد</h2>
+                            </div>
+                            <i onclick="closeForm()" class="fas fa-times close-form-add-restaurant"></i>
+                        </div>
+
+                    <div class="form">
+                        <div class="name">
+                            <label for="name">اسم المطعم *</label>
+                            <input type="text" id="name">
+                        </div>
+
+                        <div class="images">
+                            <label for="logo">
+                                <span>غلاف المطعم *</span>
+                                <i class="fa fa-upload"></i>
+                            </label>
+                            <input  type="file" id="logo" accept="image/*" hidden>
+                        </div>
+
+                        <div class="phone">
+                            <label for="phone">رقم الهاتف *</label>
+                            <input type="number" id="phone">
+                        </div>
+
+                        <div class="type">
+                            <label for="type">نوع المطبخ *</label>
+                            <select name="type" id="type">
+                                <option disabled selected value="جميع الانواع">جميع الانواع</option>
+                                <option value="سوري">سوري</option>
+                                <option value="فرايد تشكن">فرايد تشكن</option>
+                                <option value="بيتي">بيتي</option>
+                                <option value="كافيه">كافيه</option>
+                            </select>
+
+                        </div>
+                        <div class="location">
+                            <label for="location">الموقع *</label>
+                            <select  name="map" id="location">
+                                <option disabled selected value="جميع المناطق">جميع المناطق</option>
+                                <option value="المنيا">المنيا</option>
+                                <option value="المنيا الجديدة">المنيا الجديدة</option>
+                                <option value="مغاغة">مغاغة</option>
+                                <option value="بني مزار">بني مزار</option>
+                                <option value="سمالوط">سمالوط</option>
+                            </select>
+                        </div>
+
+                        <div class="time">
+                            <label for="time">اوقات العمل *</label>
+                            <input type="text" id="time">
+                        </div>
+
+                        <div class="features">
+                            <label for="features">المميزات *</label>
+                            <input type="text" id="features">
+                        </div>
+                        
+                        <div class="price">
+                            <label for="price">نطاق الأسعار *</label>
+                            <select name="price" id="price">
+                                <option disabled selected value="جميع الاسعار">جميع الاسعار</option>
+                                <option value="فاخر">فاخر</option>
+                                <option value="متوسط">متوسط</option>
+                                <option value="اقتصادي">اقتصادي</option>
+                            </select>
+                        </div>
+                        
+
+                        
+
+                        <div class="images">
+                            <label for="images">
+                                <span>الصور</span>
+                                <i class="fa fa-upload"></i>
+                            </label>
+                            <input type="file" id="images" accept="image/*" multiple hidden>
+                        </div>
+
+                        <div class="rating">
+                            <label for="v">التقييم (من 5)</label>
+                            <input type="number" id="rating" step="0.1">
+                        </div>
+                    </div>
+
+                    <div class="dic">
+                            <label for="dic">وصف المطعم</label>
+                            <textarea name="" id="dic"></textarea>
+                        </div>
+
+                    <div class="two-button">
+                        <button onclick="closeForm()" class="cancel">إلغاء</button>
+                        <button id="btn-add-restaurants">إضافة المطعم</button>
+                    </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="users" class="users" >
+                <div class="section-header">
+                    <div class="text">
+                        <i class="fas fa-users"></i>
+                        <h2>إدارة المستخدمين</h2>
+                    </div>
+                    <div class="search-user">
+                        <input onkeyup="searchUser(this.value)" type="text" name="" id="search-user">
+                        <span onclick="hideSearchUser()">X</span>
+                    </div>
+                    <button onclick="showSearchUser()">
+                        <i class="fas fa-search"></i>
+                        <span>بحث</span>
+                    </button>
+                </div>
+
+                <table >
+                    <thead>
+                        <tr>
+                            <th>الصورة</th>
+                            <th>الاسم</th>
+                            <th>البريد الإلكتروني</th>
+                            <th>رقم الهاتف</th>
+                            <th>كلمة السر</th>
+                            <th>تاريخ التسجيل</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td><div class="user-avatar">ن</div></td>
+                            <td>أحمد محمد</td>
+                            <td>ahmed@example.com</td>
+                            <td>01012345678</td>
+                            <td>11</td>
+                            <td>2025-05-15</td>
+                            <td><strong>نشط</strong></td>
+                            <td>
+                                <i class="fas fa-eye"></i>
+                                <i class="fas fa-ban" style="margin-top: 5px;"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div class="user-avatar">ش</div></td>
+                            <td>أحمد محمد</td>
+                            <td>ahmed@example.com</td>
+                            <td>01012345678</td>
+                            <td>11</td>
+                            <td>2025-05-15</td>
+                            <td><strong class="stop">موقوف</strong></td>
+                            <td>
+                                <i class="fas fa-eye"></i>
+                                <i class="fas fa-check" style="margin-top: 5px;"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div class="user-avatar">و</div></td>
+                            <td>أحمد محمد</td>
+                            <td>ahmed@example.com</td>
+                            <td>01012345678</td>
+                            <td>11</td>
+                            <td>2025-05-15</td>
+                            <td><strong>نشط</strong></td>
+                            <td>
+                                <i class="fas fa-eye"></i>
+                                <i class="fas fa-ban" style="margin-top: 5px;"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div class="user-avatar">ج</div></td>
+                            <td>أحمد محمد</td>
+                            <td>ahmed@example.com</td>
+                            <td>01012345678</td>
+                            <td>11</td>
+                            <td>2025-05-15</td>
+                            <td><strong>نشط</strong></td>
+                            <td>
+                                <i class="fas fa-eye"></i>
+                                <i class="fas fa-ban" style="margin-top: 5px;"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div class="user-avatar">س</div></td>
+                            <td>أحمد محمد</td>
+                            <td>ahmed@example.com</td>
+                            <td>01012345678</td>
+                            <td>11</td>
+                            <td>2025-05-15</td>
+                            <td><strong class="stop">موقوف</strong></td>
+                            <td>
+                                <i class="fas fa-eye"></i>
+                                <i class="fas fa-check" style="margin-top: 5px;"></i>
+                            </td> -->
+                        <!-- </tr> -->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../JS/dashbord.js"></script>
+
+</body>
+</html>

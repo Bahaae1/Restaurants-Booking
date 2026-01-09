@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/page-login-and-creeat-account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>تسجيل الدخول</title>
+</head>
+<body>
+    <header >
+        <nav>
+
+            <div class="logo">
+                <i class="fa-solid fa-utensils"></i>
+                <h1>حجز مطاعم</h1>
+            </div>
+
+            <a href="../HTML/Home-Page.html" class="go-home" >
+                <i class="fa-solid fa-house"></i>
+                <span> الصفحة الرئيسية</span>
+            </a>
+        </nav>
+        
+    </header>
+
+    <section>
+            <div class="login">
+    
+                <div class="head">
+                    <h2>
+                        <i class="fas fa-user-circle"></i>
+                        مرحبا بك
+                    </h2>
+                    <p>سجل دخولك أو أنشئ حساباً جديداً للاستفادة من جميع مزايا الموقع</p>
+                </div>
+    
+                <div class="two-button">
+                    <button onclick="goLogin()" class="login-btn active">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <h3>تسجيل الدخول</h3>
+                    </button>
+                    <button onclick="goCreateAccount()" class="create-account-btn">
+                        <i class="fas fa-user-plus"></i>
+                        <h3>انشاء حساب</h3>
+                    </button>
+                </div>
+    
+                <div class="two-forms">
+
+                    <div  class="form login-form">
+                        <div class="login-email">
+                            <label for="login-email">
+                                <i class="fas fa-envelope"></i>
+                                <span>البريد الإلكتروني</span>
+                            </label>
+                            <div class="">
+                                <input type="email" name="login-email" id="login-email" placeholder="example@gmail.com">
+                            </div>
+                        </div>
+                        
+                        <div class="login-password">
+                            <label for="login-password">
+                                <i class="fas fa-lock"></i>
+                                <span>كلمة المرور</span>
+                            </label>
+                            <div class="show-password">
+                                <input type="password" name="login-password" id="login-password" placeholder="">
+                                <i class="fas fa-eye btn-show-pass-login"></i>
+                            </div>
+
+                        </div>
+    
+                        <div class="forgat-password">
+                            <div class="input-check">
+                                <input type="checkbox" name="" id="input-check">
+                                <label for="input-check">تذكرني</label>
+                            </div>
+                            <a href="">نسيت كلمة المرور؟</a>
+                        </div>
+    
+                        <button onclick="loginUser()" class="login-btn-1">
+                            <i class="fas fa-sign-in-alt"></i>
+                            تسجيل الدخول
+                        </button>
+    
+                        <div class="footer-login">
+                            <p>أو سجل دخول باستخدام</p>
+    
+                            <div class="login-social">
+                                <button class="facebook">
+                                    <i class="fab fa-facebook"></i>
+                                    <span>فيسبوك</span>
+                                </button>
+                                <button class="google">
+                                    <i class="fab fa-google"></i>
+                                    <span>جوجل</span>
+                                </button>
+                                <button class="twitter">
+                                    <i class="fab fa-twitter"></i>
+                                    <span>تويتر</span>
+                                </button>
+                            </div>
+    
+                            <p class="not-account">ليس لديك حساب؟ <a onclick="goCreateAccount()" href="#">إنشاء حساب جديد</a></p>
+    
+                        </div>
+                    </div>
+
+
+
+                    <div  class="form create-account-form">
+
+
+                        <div class="create-name">
+                            <label for="create-name">
+                                <span><i class="fas fa-user"></i></span>
+                                الاسم الكامل
+                            </label>
+                            <div class="">
+                                <input type="text" name="create-name" id="create-name" placeholder="ادخل اسمك بالكامل">
+                            </div>
+                        </div>
+
+                        <div class="create-email">
+                            <label for="create-email">
+                                <i class="fas fa-envelope"></i>
+                                <span>البريد الإلكتروني</span>
+                            </label>
+                            <div class="">
+                                <input type="email" name="create-email" id="create-email" placeholder="example@gmail.com">
+                            </div>
+                        </div>
+                        
+                        <div class="create-phone">
+                            <label for="create-phone">
+                                <i class="fas fa-phone"></i>
+                                <span>رقم الهاتف</span>
+                            </label>
+                            <div class="">
+                                <input type="number" name="create-phone" id="create-phone" placeholder="01XXXXXXXXX">
+                            </div>
+                        </div>
+
+                        <div class="create-password">
+                            <label for="create-password">
+                                <i class="fas fa-lock"></i>
+                                <span>كلمة المرور</span>
+                            </label>
+                            <div class="show-password">
+                                <input type="password" name="create-password" id="create-password" placeholder="كلمة مرور قوية (8 احرف على الاقل)">
+                                <i class="fas fa-eye btn-show-pass-create"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="create-password-2">
+                            <label for="create-password-2">
+                                <i class="fas fa-lock"></i>
+                                <span>تأكيد كلمة المرور</span>
+                            </label>
+                            <div class="show-password">
+                                <input type="password" name="create-password-2" id="create-password-2" placeholder="اعد ادخال كلمة المرور">
+                                <i class="fas fa-eye btn-show-pass-create2"></i>
+                            </div>
+                        </div>
+                        <div class="conditions">
+                            <input type="checkbox" name="" id="check" >
+                            <label  for="check">اوافق على <a href="">الشروط والاحكام</a> و <a href="">سياسة الخصوصية</a></label>
+                        </div>                    
+                        <button id="create-account">
+                            <i class="fas fa-sign-in-alt"></i>
+                            انشاءحساب
+                        </button>
+    
+                        <div class="footer-creat-account">
+                            <p>أو أنشئ حساب باستخدام</p>
+    
+                            <div class="login-social">
+                                <button class="facebook">
+                                    <i class="fab fa-facebook"></i>
+                                    <span>فيسبوك</span>
+                                </button>
+                                <button class="google">
+                                    <i class="fab fa-google"></i>
+                                    <span>جوجل</span>
+                                </button>
+                                <button class="twitter">
+                                    <i class="fab fa-twitter"></i>
+                                    <span>تويتر</span>
+                                </button>
+                            </div>
+    
+                            <p class="not-account">لديك حساب بالفعل؟<a onclick="goLogin()" href="#">سجل دخولك</a></p>
+    
+                        </div>
+
+                    </form>
+    
+                </div>
+    
+            </div>
+
+
+
+    </section>
+
+    <footer>
+        <div class="footer">
+            <div class="about-site">
+                <h2>عن حجز مطاعم</h2>
+                <p>منصة رائدة في مجال حجز المطاعم في مصر، نسعى لتقديم أفضل تجربة حجز للعملاء وأفضل حلول إدارة للمطاعم.</p>
+                <div>
+                    <i class="fas fa-building"></i>
+                    <span>شركة حجز مطاعم اونلاين</span>
+                </div>
+
+                <div>
+                    <i class="fas fa-id-card"></i>
+                    <span>السجل التجاري: 123456</span>
+                </div>
+
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>المنيا، مصر</span>
+                </div>
+
+            </div>
+
+            <div class="links">
+                <h2>روابط سريعة</h2>
+                <ul>
+                    <li>
+                        <a href="../HTML/Home-Page.html">
+                            <i class="fas fa-home"></i>
+                            <span>الرئيسية</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../HTML/Restaurants-Page.html">
+                            <i class="fas fa-utensils"></i>
+                            <span>المطاعم</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-user"></i>
+                            <span>الملف الرئيسي</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-file-alt"></i>
+                            <span>الشروط والاحكام</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>سياسة الخصوصية</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="services">
+                <h2>خدماتنا</h2>
+                <ul>
+                    <li>
+                        <a href="../HTML/Restaurants-Page.html">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>حجز المطاعم</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="follow-us">
+                <h2>تابعنا</h2>
+                <ul>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-linkedin"></i>
+                            <span>Linkedin</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-tiktok"></i>
+                            <span>TikTok</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-end">
+            <p>© 2025  <strong>حجز مطاعم</strong>. جميع الحقوق محفوظة.</p>
+            <p>تم التطوير بواسطة <strong>Bahaa Hassan</strong>  | التصميم: <strong>Bahaa Hassan</strong></p>
+        </div>
+    </footer>
+
+    <div id="transparent">
+        <div id="alert">
+            <span id="alert-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui voluptate beatae iste! Repellendus necessitatibus ea rem explicabo! Laudantium quia quos iusto earum quas reiciendis, doloribus praesentium tempora, natus quasi ipsa.</span>
+            <span id="close-alert">X</span>
+        </div>
+    </div>
+
+    <script src="../JS/page-login-and-creeat-account.js" ></script>
+</body>
+</html>

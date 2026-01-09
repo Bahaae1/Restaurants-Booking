@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Restaurant.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>صفحة المطعم</title>
+</head>
+<body>
+    <header >
+        <nav>
+
+            <div class="logo">
+                <i class="fa-solid fa-utensils"></i>
+                <h1>حجز مطاعم</h1>
+            </div>
+
+                <a href="../HTML/Home-Page.html" class="go-home" >
+                    <i class="fa-solid fa-house"></i>
+                </a>
+                
+                
+            </nav>
+            <div class="icon-bell">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <i onclick="logout()" class="fa-solid fa-right-from-bracket"></i>
+        
+    </header> 
+
+    <section class="container">
+        <!-- <div class="head">
+            <img src="../images/freekeh.webp" alt="">
+            <div class="pp">
+                <h2>فريكة - Freekeh</h2>
+                <p>
+                    <i class="fas fa-star"></i>
+                    <span>4.5 (248 تقييم)</span>
+                </p>
+            </div>
+        </div>
+        <div class="info-restaurant">
+            <div class="box">
+                <h2>
+                    <i class="fas fa-info-circle"></i>
+                    <span>معلومات عامة</span>
+                </h2>
+                <div class="content">
+                    <div class="location">
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>الموقع : المنيا - شارع طه حسين</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-utensils"></i>
+                            <span>نوع المطبخ : سوري</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span> نطاق الاسعار : اقتصادي</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-clock"></i>
+                            <span>  اوقات العمل : من 11 ص الى 3 ص</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                    <h2>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>معلومات التواصل</span>
+                    </h2>
+                <div class="content">
+                    <div class="contact">
+                        <p>
+                            <i class="fas fa-phone"></i>
+                            <span>الهاتف : 01012345678</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <span> البريد الإلكتروني : info@freekeh.com</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-globe"></i>
+                            <span>  الموقع الإلكتروني : www.freekeh.com</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <h2>
+                    <i class="fas fa-check-circle"></i>
+                    <span>المميزات</span>
+                </h2>
+                <div class="content">
+                    <div class="feature">
+                        <span>سرعة الخدمة</span>
+                        <span>مقاعد مريحة</span>
+                        <span>توصيل</span>
+                        <span>مناسب للعائلات</span>
+                        <span>وجبات سريعة</span>
+                        <span>مكان هادئ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="disc">
+            <h2>
+                <i class="fas fa-align-right"></i>
+                <span>وصف المطعم</span>
+            </h2>
+            <p>مطعم سوري راقٍ في المنيا، يقدم تجربة أصيلة لأطباق المزة والمشاوي الشهية محضرة باحترافية عالية مع أجواء دمشقية أصيلة. يتميز المطعم بتصميم داخلي أنيق يجمع بين الأصالة والحداثة، مع وجود أماكن جلوس داخلية وخارجية تطل على مناظر خلابة. يقدم المطعم تشكيلة واسعة من الأطباق السورية التقليدية والمعدة بأيدٍ خبيرة، مما يضمن نكهة لا تُنسى.</p>
+        </div> -->
+
+    </section>
+
+    <section class="menu">
+        <div class="menu-head">
+                <h2>
+                    <i class="fas fa-utensils"></i>
+                    <span>قائمة الطعام</span>
+                </h2>
+                <p>استمتع بتشكيلتنا الواسعة من الأطباق السورية الأصيلة</p>
+        </div>
+        <div class="menu-images">
+            <img src="../images/freekeh.webp" alt="">
+            <img src="../images/freekeh.webp" alt="">
+            <img src="../images/freekeh.webp" alt="">
+            <img src="../images/freekeh.webp" alt="">
+            <img src="../images/freekeh.webp" alt="">
+            <img src="../images/freekeh.webp" alt="">
+        </div>
+
+        <div class="place-head menu-head">
+            <h2>
+                <i class="fa-solid fa-camera"></i>
+                <span>صور المكان</span>
+            </h2>
+            <p>استمتع برؤية صور حقيقية للمكان</p>
+        </div>
+        <div class="menu-images place-images">
+            <img src="../images/freekeh.webp" alt="">
+            <img src="../images/freekeh.webp" alt="">
+            <img src="../images/freekeh.webp" alt="">
+            <img src="../images/freekeh.webp" alt="">
+            <img src="../images/freekeh.webp" alt="">
+            <img src="../images/freekeh.webp" alt="">
+        </div>
+
+
+        <div class="btn">
+            <h2>جاهز لتجربة طعام لا ينسى؟</h2>
+            <p>احجز طاولتك الآن واستمتع بأجواء رائعة مع أطباق شهية أعدت بعناية فائقة.</p>
+            <button onclick="btnBooking()">
+                <i class="fas fa-calendar-plus"></i>
+                <span>احجز الآن</span>
+            </button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <div class="about-site">
+                <h2>عن حجز مطاعم</h2>
+                <p>منصة رائدة في مجال حجز المطاعم في مصر، نسعى لتقديم أفضل تجربة حجز للعملاء وأفضل حلول إدارة للمطاعم.</p>
+                <div>
+                    <i class="fas fa-building"></i>
+                    <span>شركة حجز مطاعم اونلاين</span>
+                </div>
+
+                <div>
+                    <i class="fas fa-id-card"></i>
+                    <span>السجل التجاري: 123456</span>
+                </div>
+
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>المنيا، مصر</span>
+                </div>
+
+            </div>
+
+            <div class="links">
+                <h2>روابط سريعة</h2>
+                <ul>
+                    <li>
+                        <a href="../HTML/Home-Page.html">
+                            <i class="fas fa-home"></i>
+                            <span>الرئيسية</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../HTML/Restaurants-Page.html">
+                            <i class="fas fa-utensils"></i>
+                            <span>المطاعم</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-user"></i>
+                            <span>الملف الرئيسي</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-file-alt"></i>
+                            <span>الشروط والاحكام</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>سياسة الخصوصية</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="services">
+                <h2>خدماتنا</h2>
+                <ul>
+                    <li>
+                        <a href="../HTML/Restaurants-Page.html">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>حجز المطاعم</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="follow-us">
+                <h2>تابعنا</h2>
+                <ul>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-linkedin"></i>
+                            <span>Linkedin</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-tiktok"></i>
+                            <span>TikTok</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-end">
+            <p>© 2025  <strong>حجز مطاعم</strong>. جميع الحقوق محفوظة.</p>
+            <p>تم التطوير بواسطة <strong>Bahaa Hassan</strong>  | التصميم: <strong>Bahaa Hassan</strong></p>
+        </div>
+    </footer>
+
+    <script src="../JS/Restaurant.js"></script>
+</body>
+</html>
