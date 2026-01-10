@@ -370,7 +370,10 @@ p{
 .icon-bell strong{
     margin-left: 5px;
 }
-@media(max-width:769px){
+@media(max-width:960px){
+    .icon-bell .user .name h4{
+        display: none;
+    }
     
 }
 @media(max-width:769px){
@@ -436,10 +439,6 @@ p{
     .icon-bell .user .name{
         margin-left: 6px;
         
-    }
-    .icon-bell .user .name h4{
-        margin-right: 4px;
-        font-size: 10px;
     }
     .icon-bell .user i{
         font-size: 10px;
