@@ -372,7 +372,7 @@ function showCancelledBooking(){
                         </div>
                     
                     <div class="btns">
-                        <button class="btn-outline">
+                        <button onclick="showDetailsBookingCanc(${i})" class="btn-outline">
                             <i class="fas fa-eye"></i>
                             <span>التفاصيل</span>
                         </button>
@@ -393,7 +393,6 @@ showCancelledBooking();
 // زرار اعادة الحجز للحجوزات الملغية
 let resArr = JSON.parse(localStorage.getItem('restaurantsArr'))
 function returnBooking(i){
-    console.log(i)
     let nRest = resArr.find(e=>e.name === bookingCanc[i].nameRest )
     localStorage.setItem('clickRest', JSON.stringify(nRest))
     location.assign('/HTML/input-data-user.html')
@@ -432,7 +431,7 @@ function showCompletedBooking(){
                         </div>
                     
                     <div class="btns">
-                        <button class="btn-outline">
+                        <button onclick="showDetailsBookingComp(${i})" class="btn-outline">
                             <i class="fas fa-eye"></i>
                             <span>التفاصيل</span>
                         </button>
@@ -451,7 +450,6 @@ showCompletedBooking()
 
 // زرار اعادة الحجز للحجوزات اللي انتهت
 function returnBookingComp(i){
-    console.log(i)
     let nRest = resArr.find(e=>e.name === bookingComp[i].nameRest )
     localStorage.setItem('clickRest', JSON.stringify(nRest))
     location.assign('/HTML/input-data-user.html')
@@ -468,10 +466,213 @@ function showCount(){
 showCount()
 
 
-// زرار عرض تفاصيل الحجز
+//  عرض تفاصيل الحجوزات القادمة
+let showDetails = document.getElementById('show-details-booking')
 function showDetailsBookingCom(i){
-    console.log(bookingUser[i])
+    showDetails.style.display = 'block'
+    showDetails.innerHTML =`
+        <div class="show-details">
+                <h2>
+                    <i class="fas fa-info-circle"></i>
+                    <span>تفاصيل الحجز</span>
+                </h2>
+            <div class="grid-show-details">
+                <div >
+                    <i class="fas fa-user"></i>
+                    <p><strong>الاسم : </strong> <span>${bookingUser[i].name}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-hashtag"></i>
+                    <p><strong>رقم الحجز : </strong> <span>${bookingUser[i].numBookings}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-calendar-day"></i>
+                    <p><strong>التاريخ:</strong> <span>${bookingUser[i].date}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-clock"></i>
+                    <p><strong>الوقت:</strong> <span>${bookingUser[i].time}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-users"></i>
+                    <p><strong>عدد الأشخاص:</strong> <span>${bookingUser[i].countPeople} أشخاص</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-phone"></i>
+                    <p><strong>الهاتف:</strong> <span>${bookingUser[i].phone}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-user"></i>
+                    <p><strong>البريد الإلكتروني:</strong> <span>${bookingUser[i].email}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-calendar-day"></i>
+                    <p><strong> ملاحظات خاصة:</strong> <span>${bookingUser[i].nots}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <p><strong>اسم المطعم:</strong> <span>${bookingUser[i].nameRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p><strong>العنوان:</strong> <span>${bookingUser[i].locationRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-utensils"></i>
+                    <p><strong>نوع المطبخ:</strong> <span>${bookingUser[i].typeRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-user"></i>
+                    <p><strong>الادمن:</strong> <span>بيبو</span></p>
+                </div>
 
+                <button onclick="closeDetails()">
+                    اغلاق
+                </button>
+            </div>
+
+        </div>
+    ` 
+}
+
+
+//  عرض تفاصيل الحجوزات الملغية
+function showDetailsBookingCanc(i){
+    showDetails.style.display = 'block'
+    showDetails.innerHTML =`
+        <div class="show-details">
+                <h2>
+                    <i class="fas fa-info-circle"></i>
+                    <span>تفاصيل الحجز</span>
+                </h2>
+            <div class="grid-show-details">
+                <div >
+                    <i class="fas fa-user"></i>
+                    <p><strong>الاسم : </strong> <span>${bookingCanc[i].name}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-hashtag"></i>
+                    <p><strong>رقم الحجز : </strong> <span>${bookingCanc[i].numBookings}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-calendar-day"></i>
+                    <p><strong>التاريخ:</strong> <span>${bookingCanc[i].date}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-clock"></i>
+                    <p><strong>الوقت:</strong> <span>${bookingCanc[i].time}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-users"></i>
+                    <p><strong>عدد الأشخاص:</strong> <span>${bookingCanc[i].countPeople} أشخاص</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-phone"></i>
+                    <p><strong>الهاتف:</strong> <span>${bookingCanc[i].phone}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-user"></i>
+                    <p><strong>البريد الإلكتروني:</strong> <span>${bookingCanc[i].email}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-calendar-day"></i>
+                    <p><strong> ملاحظات خاصة:</strong> <span>${bookingCanc[i].nots}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <p><strong>اسم المطعم:</strong> <span>${bookingCanc[i].nameRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p><strong>العنوان:</strong> <span>${bookingCanc[i].locationRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-utensils"></i>
+                    <p><strong>نوع المطبخ:</strong> <span>${bookingCanc[i].typeRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-user"></i>
+                    <p><strong>الادمن:</strong> <span>بيبو</span></p>
+                </div>
+
+                <button onclick="closeDetails()">
+                    اغلاق
+                </button>
+            </div>
+
+        </div>
+    ` 
+}
+
+//  عرض تفاصيل الحجوزات اللي انتهت
+function showDetailsBookingComp(i){
+    showDetails.style.display = 'block'
+    showDetails.innerHTML =`
+        <div class="show-details">
+                <h2>
+                    <i class="fas fa-info-circle"></i>
+                    <span>تفاصيل الحجز</span>
+                </h2>
+            <div class="grid-show-details">
+                <div >
+                    <i class="fas fa-user"></i>
+                    <p><strong>الاسم : </strong> <span>${bookingComp[i].name}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-hashtag"></i>
+                    <p><strong>رقم الحجز : </strong> <span>${bookingComp[i].numBookings}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-calendar-day"></i>
+                    <p><strong>التاريخ:</strong> <span>${bookingComp[i].date}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-clock"></i>
+                    <p><strong>الوقت:</strong> <span>${bookingComp[i].time}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-users"></i>
+                    <p><strong>عدد الأشخاص:</strong> <span>${bookingComp[i].countPeople} أشخاص</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-phone"></i>
+                    <p><strong>الهاتف:</strong> <span>${bookingComp[i].phone}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-user"></i>
+                    <p><strong>البريد الإلكتروني:</strong> <span>${bookingComp[i].email}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-calendar-day"></i>
+                    <p><strong> ملاحظات خاصة:</strong> <span>${bookingComp[i].nots}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <p><strong>اسم المطعم:</strong> <span>${bookingComp[i].nameRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p><strong>العنوان:</strong> <span>${bookingComp[i].locationRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-utensils"></i>
+                    <p><strong>نوع المطبخ:</strong> <span>${bookingComp[i].typeRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-user"></i>
+                    <p><strong>الادمن:</strong> <span>بيبو</span></p>
+                </div>
+
+                <button onclick="closeDetails()">
+                    اغلاق
+                </button>
+            </div>
+
+        </div>
+    ` 
+}
+function closeDetails(){
+    showDetails.style.display = 'none'
 }
 
 

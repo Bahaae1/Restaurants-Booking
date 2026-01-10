@@ -239,7 +239,7 @@ function loginUser(){
         }
         localStorage.setItem('currentUser', JSON.stringify(user))
         alertMsg.innerHTML = 'تم تسجيل الدخول بنجاح'
-        location.assign('../index.html')
+        location.replace('../index.html')
         return;
     }
     
