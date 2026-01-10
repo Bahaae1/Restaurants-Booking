@@ -126,7 +126,7 @@ function btnDetails(i){
 
 
 // لما المستخدم يسجل الدخول الحاجات دي تظهرله
-window.onload = function showDataUser(){
+function showDataUser(){
     if(localStorage.getItem('currentUser')){
     let currentUser = JSON.parse(localStorage.getItem('currentUser'))
     let profileData = JSON.parse(localStorage.getItem('infoUser'));
@@ -152,7 +152,7 @@ window.onload = function showDataUser(){
         }
         
 };
-
+showDataUser();
 
 // لما المستخدم يسجل خروج
 function logout(){

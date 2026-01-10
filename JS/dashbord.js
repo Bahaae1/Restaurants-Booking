@@ -333,6 +333,7 @@ function showBooking(){
             <td>${bookingsUser[i].time}</td>
             <td class="status-yellow">قيد الانتظار</td>
             <td>
+            <i onclick="showDetailsBookingCom(${i})" class="fas fa-eye"></i>
             <i onclick="completedBooking(${i})" class="fas fa-check"></i>
                 <i onclick="cancelledBooking(${i})" class="fas fa-times"></i>
             </td>
@@ -363,8 +364,8 @@ function cancelledBooking(i){
     localStorage.setItem('dataBookingArr' , JSON.stringify(bookingsUser))
 }
 // عرض البيانات للحجوزات الملغية
+let locCancelled = JSON.parse(localStorage.getItem("cancelled"))
 function showCancelledBooking(){
-    let locCancelled = JSON.parse(localStorage.getItem("cancelled"))
     let showBookingsCancelled ;
 
     for(let i = 0 ; i < locCancelled.length ;i++){
@@ -377,7 +378,7 @@ function showCancelledBooking(){
             <td>${locCancelled[i].time}</td>
             <td class="status-red">ملغى</td>
             <td>
-                <i class="fas fa-eye"></i>
+                <i onclick="showDetailsBookingCanc(${i})" class="fas fa-eye"></i>
             </td>
         </tr>
                 `
@@ -404,8 +405,8 @@ function completedBooking(i){
     localStorage.setItem('dataBookingArr' , JSON.stringify(bookingsUser))
 }
 // عرض الحجوزات اللي انتهت 
+let locCompleted = JSON.parse(localStorage.getItem("completed"))
 function showCompletedBooking(){
-    let locCompleted = JSON.parse(localStorage.getItem("completed"))
     let showBookingsCompleted ;
 
     for(let i = 0 ; i < locCompleted.length ;i++){
@@ -418,8 +419,7 @@ function showCompletedBooking(){
             <td>${locCompleted[i].time}</td>
             <td class="status-green">انتهي</td>
             <td>
-                
-                <i class="fas fa-eye"></i>
+                <i onclick="showDetailsBookingComp(${i})" class="fas fa-eye"></i>
             </td>
         </tr>
                 `
@@ -428,12 +428,6 @@ function showCompletedBooking(){
             }
 }
 showCompletedBooking();
-
-
-
-
-
-
 
 
 // عرض عدد الحجوزات
@@ -445,3 +439,212 @@ function countBooking(){
     document.getElementById('count-booking-day').innerText = countActive.length
 }
 countBooking()
+
+
+let showDetails = document.getElementById('show-details-booking')
+function showDetailsBookingCom(i){
+    showDetails.style.display = 'block'
+    showDetails.innerHTML =`
+        <div class="show-details">
+                <h2>
+                    <i class="fas fa-info-circle"></i>
+                    <span>تفاصيل الحجز</span>
+                </h2>
+            <div class="grid-show-details">
+                <div >
+                    <i class="fas fa-user"></i>
+                    <p><strong>الاسم : </strong> <span>${bookingsUser[i].name}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-hashtag"></i>
+                    <p><strong>رقم الحجز : </strong> <span>${bookingsUser[i].numBookings}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-calendar-day"></i>
+                    <p><strong>التاريخ:</strong> <span>${bookingsUser[i].date}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-clock"></i>
+                    <p><strong>الوقت:</strong> <span>${bookingsUser[i].time}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-users"></i>
+                    <p><strong>عدد الأشخاص:</strong> <span>${bookingsUser[i].countPeople} أشخاص</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-phone"></i>
+                    <p><strong>الهاتف:</strong> <span>${bookingsUser[i].phone}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-user"></i>
+                    <p><strong>البريد الإلكتروني:</strong> <span>${bookingsUser[i].email}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-calendar-day"></i>
+                    <p><strong> ملاحظات خاصة:</strong> <span>${bookingsUser[i].nots}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <p><strong>اسم المطعم:</strong> <span>${bookingsUser[i].nameRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p><strong>العنوان:</strong> <span>${bookingsUser[i].locationRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-utensils"></i>
+                    <p><strong>نوع المطبخ:</strong> <span>${bookingsUser[i].typeRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-user"></i>
+                    <p><strong>الادمن:</strong> <span>بيبو</span></p>
+                </div>
+
+                <button onclick="closeDetails()">
+                    اغلاق
+                </button>
+            </div>
+
+        </div>
+    ` 
+}
+
+
+//  عرض تفاصيل الحجوزات الملغية
+function showDetailsBookingCanc(i){
+    showDetails.style.display = 'block'
+    showDetails.innerHTML =`
+        <div class="show-details">
+                <h2>
+                    <i class="fas fa-info-circle"></i>
+                    <span>تفاصيل الحجز</span>
+                </h2>
+            <div class="grid-show-details">
+                <div >
+                    <i class="fas fa-user"></i>
+                    <p><strong>الاسم : </strong> <span>${locCancelled[i].name}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-hashtag"></i>
+                    <p><strong>رقم الحجز : </strong> <span>${locCancelled[i].numBookings}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-calendar-day"></i>
+                    <p><strong>التاريخ:</strong> <span>${locCancelled[i].date}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-clock"></i>
+                    <p><strong>الوقت:</strong> <span>${locCancelled[i].time}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-users"></i>
+                    <p><strong>عدد الأشخاص:</strong> <span>${locCancelled[i].countPeople} أشخاص</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-phone"></i>
+                    <p><strong>الهاتف:</strong> <span>${locCancelled[i].phone}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-user"></i>
+                    <p><strong>البريد الإلكتروني:</strong> <span>${locCancelled[i].email}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-calendar-day"></i>
+                    <p><strong> ملاحظات خاصة:</strong> <span>${locCancelled[i].nots}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <p><strong>اسم المطعم:</strong> <span>${locCancelled[i].nameRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p><strong>العنوان:</strong> <span>${locCancelled[i].locationRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-utensils"></i>
+                    <p><strong>نوع المطبخ:</strong> <span>${locCancelled[i].typeRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-user"></i>
+                    <p><strong>الادمن:</strong> <span>بيبو</span></p>
+                </div>
+
+                <button onclick="closeDetails()">
+                    اغلاق
+                </button>
+            </div>
+
+        </div>
+    ` 
+}
+
+//  عرض تفاصيل الحجوزات اللي انتهت
+function showDetailsBookingComp(i){
+    showDetails.style.display = 'block'
+    showDetails.innerHTML =`
+        <div class="show-details">
+                <h2>
+                    <i class="fas fa-info-circle"></i>
+                    <span>تفاصيل الحجز</span>
+                </h2>
+            <div class="grid-show-details">
+                <div >
+                    <i class="fas fa-user"></i>
+                    <p><strong>الاسم : </strong> <span>${locCompleted[i].name}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-hashtag"></i>
+                    <p><strong>رقم الحجز : </strong> <span>${locCompleted[i].numBookings}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-calendar-day"></i>
+                    <p><strong>التاريخ:</strong> <span>${locCompleted[i].date}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-clock"></i>
+                    <p><strong>الوقت:</strong> <span>${locCompleted[i].time}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-users"></i>
+                    <p><strong>عدد الأشخاص:</strong> <span>${locCompleted[i].countPeople} أشخاص</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-phone"></i>
+                    <p><strong>الهاتف:</strong> <span>${locCompleted[i].phone}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-user"></i>
+                    <p><strong>البريد الإلكتروني:</strong> <span>${locCompleted[i].email}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-calendar-day"></i>
+                    <p><strong> ملاحظات خاصة:</strong> <span>${locCompleted[i].nots}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <p><strong>اسم المطعم:</strong> <span>${locCompleted[i].nameRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p><strong>العنوان:</strong> <span>${locCompleted[i].locationRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-utensils"></i>
+                    <p><strong>نوع المطبخ:</strong> <span>${locCompleted[i].typeRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-user"></i>
+                    <p><strong>الادمن:</strong> <span>بيبو</span></p>
+                </div>
+
+                <button onclick="closeDetails()">
+                    اغلاق
+                </button>
+            </div>
+
+        </div>
+    ` 
+}
+function closeDetails(){
+    showDetails.style.display = 'none'
+}

@@ -526,6 +526,70 @@ table .stop{
     color: var(--primary-color);
 }
 
+
+#show-details-booking{
+    position: fixed;
+    z-index: 999999999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0,0.5);
+    display: none;
+}
+#show-details-booking .show-details{
+    position: absolute;
+    width: 700px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999999999;
+    background-color: white;
+    overflow: auto;
+    border-radius: 20px;
+}
+#show-details-booking .show-details h2{
+    text-align: center;
+    padding: 20px;
+    color: var(--dark-color);
+}
+#show-details-booking .show-details .grid-show-details{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px ,1fr));
+    padding: 20px;
+    font-size: 17px;
+    gap: 20px;
+}
+#show-details-booking .show-details .grid-show-details div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+#show-details-booking .show-details .grid-show-details div strong,
+#show-details-booking .show-details .grid-show-details div i{
+    color: var(--dark-color);
+}
+#show-details-booking .show-details .grid-show-details div span{
+    color: #666;
+}
+#show-details-booking .show-details .grid-show-details button{
+    grid-column: 1/3;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .5s ease;
+    background-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+#show-details-booking .show-details .grid-show-details button:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
 @media(max-width:768px){
     .sidebar{
         display: none;
