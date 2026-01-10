@@ -157,7 +157,8 @@ showDataUser();
 // لما المستخدم يسجل خروج
 function logout(){
     localStorage.removeItem('currentUser')
-    location.assign('../index.html')
+
+    location.reload()
 }
 
 // السيرش الل في الهيدر

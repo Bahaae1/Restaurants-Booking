@@ -441,11 +441,12 @@ function countBooking(){
 countBooking()
 
 
+//  عرض تفاصيل الحجوزات القادمة
 let showDetails = document.getElementById('show-details-booking')
 function showDetailsBookingCom(i){
     showDetails.style.display = 'block'
     showDetails.innerHTML =`
-        <div class="show-details">
+    <div class="show-details">
                 <h2>
                     <i class="fas fa-info-circle"></i>
                     <span>تفاصيل الحجز</span>
