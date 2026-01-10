@@ -70,10 +70,7 @@ function showRatingRestaurant(){
 
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <span>${ratingObj[i].rating}</span>
                         </div>
 
                         <p>${ratingObj[i].dic}</p>

@@ -59,7 +59,7 @@ window.onload = function(){
                         </p>
                         <p>
                             <i class="fas fa-globe"></i>
-                            <span>  الموقع الإلكتروني : www.freekeh.com</span>
+                            <span>  الموقع الإلكتروني : ${dataRest.website}</span>
                         </p>
                     </div>
                 </div>

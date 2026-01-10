@@ -97,6 +97,8 @@ let restaurantPrice = document.querySelector('.form-add-restaurant .add-restaura
 let restaurantImages = document.querySelector('.form-add-restaurant .add-restaurant .form #images')
 let restaurantRating = document.querySelector('.form-add-restaurant .add-restaurant .form #rating')
 let restaurantDic = document.getElementById('dic')
+let restaurantEmail = document.querySelector('.form-add-restaurant .add-restaurant .form #email')
+let restaurantWebsite = document.querySelector('.form-add-restaurant .add-restaurant .form #website')
 let btnAddRestaurants = document.getElementById('btn-add-restaurants')
 
 
@@ -127,6 +129,8 @@ btnAddRestaurants.addEventListener('click', ()=>{
             images:restaurantImages.file,
             rating:restaurantRating.value,
             dic:restaurantDic.value,
+            email:restaurantEmail.value,
+            website:restaurantWebsite.value,
             }
             if (mood === 'create'){
                 restaurantsArr.push(restaurant)
@@ -149,6 +153,8 @@ btnAddRestaurants.addEventListener('click', ()=>{
                     restaurantImages.file = '';
                     restaurantRating.value = '';
                     dic.value = '';
+                    restaurantEmail.value = '';
+                    restaurantWebsite.value = '';
             localStorage.setItem('restaurantsArr' , JSON.stringify(restaurantsArr))
     }
 
@@ -218,7 +224,10 @@ function editRestaurant(i){
     restaurantImages.file = dataRestaurants[i].images;
     restaurantRating.value = dataRestaurants[i].rating;
     dic.value = dataRestaurants[i].dic;
-        
+    restaurantEmail.value = dataRestaurants[i].email;
+    restaurantWebsite.value = dataRestaurants[i].website;
+
+
     btnAddRestaurants.style.backgroundColor = 'black'
     btnAddRestaurants.innerHTML = 'تعديل المطعم'
 
@@ -386,7 +395,7 @@ if(localStorage.completed !== null){
 }else{
     completed = [];
 }
-// زرار تأكيد الحجز
+// زرار انتهاء الحجز
 function completedBooking(i){
     completed.push(bookingsUser[i])
     localStorage.setItem('completed' , JSON.stringify(completed))
@@ -394,7 +403,7 @@ function completedBooking(i){
     bookingsUser.splice(i,1)
     localStorage.setItem('dataBookingArr' , JSON.stringify(bookingsUser))
 }
-// عرض الحجوزات اللي اتاكد دفعها
+// عرض الحجوزات اللي انتهت 
 function showCompletedBooking(){
     let locCompleted = JSON.parse(localStorage.getItem("completed"))
     let showBookingsCompleted ;

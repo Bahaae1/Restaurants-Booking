@@ -57,11 +57,11 @@ window.onload = function(){
                         </p>
                         <p>
                             <i class="fas fa-envelope"></i>
-                            <span> البريد الإلكتروني : info@freekeh.com</span>
+                            <span> البريد الإلكتروني : ${dataRest.email}</span>
                         </p>
                         <p>
                             <i class="fas fa-globe"></i>
-                            <span>  الموقع الإلكتروني : www.freekeh.com</span>
+                            <span>  الموقع الإلكتروني : ${dataRest.website}</span>
                         </p>
                     </div>
                 </div>

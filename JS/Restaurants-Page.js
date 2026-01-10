@@ -57,64 +57,6 @@ let ratingObj = JSON.parse(ratingRestaurant)
 let restaurantSection = document.querySelector('#restaurant-section .restaurant-all')
 let restaurantCount = document.querySelector('#restaurant-section .restaurant-count')
 
-// function showRatingRestaurant(){
-//     for(let i = 0 ; i < ratingObj.length ; i++ ){
-//         let show = `
-//         <div class="restaurant-box">
-//                     <img src="../images/freekeh.webp" alt="">
-
-//                     <div class="restaurant-desc">
-//                         <h3>${ratingObj[i].name}</h3>
-
-//                         <div class="data">
-//                             <div class="map">
-//                                 <i class="fas fa-map-marker-alt"></i>
-//                                 <span>${ratingObj[i].location}</span>
-//                             </div>
-
-//                             <div class="type">
-//                                 <i class="fas fa-utensils"></i>
-//                                 <span>${ratingObj[i].type}</span>
-//                             </div>
-
-//                             <div class="price">
-//                                 <i class="fas fa-money-bill-wave"></i>
-//                                 <span>${ratingObj[i].price}</span>
-//                             </div>
-//                         </div>
-
-//                         <div class="rating">
-//                             <i class="fa-solid fa-star"></i>
-//                             <i class="fa-solid fa-star"></i>
-//                             <i class="fa-solid fa-star"></i>
-//                             <i class="fa-solid fa-star"></i>
-//                             <i class="fa-solid fa-star-half-stroke"></i>
-//                         </div>
-
-//                         <p>${ratingObj[i].dic}</p>
-
-//                         <div class="btns">
-//                             <a class="btn-details">
-//                                 <i class="fas fa-info-circle"></i>
-//                                 <span>التفاصيل</span>
-//                             </a>
-
-//                             <a class="btn-booking">
-//                                 <i class="fas fa-calendar-plus"></i>
-//                                 <span>احجز الان</span>
-//                             </a>
-//                         </div>
-//                     </div>
-//                 </div>
-//         `
-//         restaurantSection.innerHTML += show
-//     }
-    
-    // let count = ` عرض <span>${ratingObj.length}</span> من <span>${ratingObj.length}</span> مطاعم`;
-    
-    // restaurantCount.innerHTML = count
-// }
-// showRatingRestaurant();
 
 
 function searchType(){
@@ -148,10 +90,7 @@ function searchType(){
 
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <span>${ratingObj[i].rating}</span>
                         </div>
 
                         <p>${ratingObj[i].dic}</p>
@@ -200,10 +139,7 @@ function searchType(){
 
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <span>${ratingObj[i].rating}</span>
                         </div>
 
                         <p>${ratingObj[i].dic}</p>
@@ -262,10 +198,7 @@ function searchLocation(){
 
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <span>${ratingObj[i].rating}</span>
                         </div>
 
                         <p>${ratingObj[i].dic}</p>
@@ -314,10 +247,7 @@ function searchLocation(){
 
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <span>${ratingObj[i].rating}</span>
                         </div>
 
                         <p>${ratingObj[i].dic}</p>
@@ -378,10 +308,7 @@ function searchPrice(){
 
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <span>${ratingObj[i].rating}</span>
                         </div>
 
                         <p>${ratingObj[i].dic}</p>
@@ -430,10 +357,7 @@ function searchPrice(){
 
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <span>${ratingObj[i].rating}</span>
                         </div>
 
                         <p>${ratingObj[i].dic}</p>

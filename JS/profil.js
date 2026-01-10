@@ -181,7 +181,6 @@ function emailBlur(){
 }
 
 
-// filterAll()
 // عرض الحجوزات
 
 let booking = JSON.parse(localStorage.getItem('dataBookingArr'))
@@ -215,7 +214,7 @@ function showBooking(){
                         </div>
                     
                     <div class="btns">
-                        <button onclick="(showDetailsBooking(${i}))" class="btn-outline">
+                        <button onclick="(showDetailsBookingCom(${i}))" class="btn-outline">
                             <i class="fas fa-eye"></i>
                             <span>التفاصيل</span>
                         </button>
@@ -245,7 +244,6 @@ filters.forEach(e=>{
     e.addEventListener('click', ()=>{
         filters.forEach(el=>{
             el.classList.remove('active')
-            filterAll()
         })
         e.classList.add('active')
     })
@@ -374,11 +372,11 @@ function showCancelledBooking(){
                         </div>
                     
                     <div class="btns">
-                        <button onclick="(showDetailsBooking(${i}))" class="btn-outline">
+                        <button class="btn-outline">
                             <i class="fas fa-eye"></i>
                             <span>التفاصيل</span>
                         </button>
-                        <button class="btn-secondary">
+                        <button onclick="returnBooking(${i})" class="btn-secondary">
                             <i class="fas fa-redo"></i>
                             <span>اعادة الحجز</span>
                         </button>
@@ -392,9 +390,14 @@ function showCancelledBooking(){
 }
 showCancelledBooking();
 
-// زرار اعادة الحجز
-// function returnBooking(i){
-// }
+// زرار اعادة الحجز للحجوزات الملغية
+let resArr = JSON.parse(localStorage.getItem('restaurantsArr'))
+function returnBooking(i){
+    console.log(i)
+    let nRest = resArr.find(e=>e.name === bookingCanc[i].nameRest )
+    localStorage.setItem('clickRest', JSON.stringify(nRest))
+    location.assign('/HTML/input-data-user.html')
+}
 
 
 // عرض الحجوزات اللي انتهت
@@ -433,7 +436,7 @@ function showCompletedBooking(){
                             <i class="fas fa-eye"></i>
                             <span>التفاصيل</span>
                         </button>
-                        <button class="btn-success">
+                        <button onclick="returnBookingComp(${i})" class="btn-success">
                             <i class="fas fa-redo"></i>
                             <span>اعادة الحجز</span>
                         </button>
@@ -445,6 +448,14 @@ function showCompletedBooking(){
 
 }
 showCompletedBooking()
+
+// زرار اعادة الحجز للحجوزات اللي انتهت
+function returnBookingComp(i){
+    console.log(i)
+    let nRest = resArr.find(e=>e.name === bookingComp[i].nameRest )
+    localStorage.setItem('clickRest', JSON.stringify(nRest))
+    location.assign('/HTML/input-data-user.html')
+}
 
 
 // عرض عدد الحجوزات كل نوع لوحده
@@ -458,9 +469,9 @@ showCount()
 
 
 // زرار عرض تفاصيل الحجز
-function showDetailsBooking(i){
-    let locBooking = JSON.parse(localStorage.getItem('dataBookingArr'))
-    console.log(locBooking[i])
+function showDetailsBookingCom(i){
+    console.log(bookingUser[i])
+
 }
 
 
