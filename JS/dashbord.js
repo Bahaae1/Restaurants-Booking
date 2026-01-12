@@ -647,3 +647,24 @@ function showDetailsBookingComp(i){
 function closeDetails(){
     showDetails.style.display = 'none'
 }
+
+// حفظ الاشعارات المرسلة للمستخدمين
+let notifications = [];
+if(localStorage.notifications !== null){
+    notifications = JSON.parse(localStorage.notifications)
+}else{
+    notifications = [];
+}
+let emailNotif = document.getElementById('email-notifications')
+let textNotif = document.getElementById('text-notifications')
+let btnNotif = document.getElementById('send-notifications')
+
+btnNotif.addEventListener('click',()=>{
+    let Notif ={
+        email:emailNotif.value,
+        text:textNotif.value
+    }
+    notifications.push(Notif)
+
+    localStorage.setItem('notifications',JSON.stringify(notifications))
+})

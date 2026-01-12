@@ -593,6 +593,70 @@ table .stop{
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+
+.form-notifications {
+    margin-top: 70px;
+    color: var(--dark-color);
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+}
+.form-notifications .head{
+    margin-bottom: 20px;
+    margin-bottom: 40px;
+}
+.form-notifications label{
+    display:block;
+    margin-bottom: 10px ;
+    font-size: 20px;
+}
+.form-notifications .email-notifications input{
+    margin-bottom: 30px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    font-size: 16px;
+    outline: none;
+}
+.form-notifications .email-notifications input:focus{
+    border: 2px solid var(--dark-color);
+    
+}
+
+.form-notifications .text-notifications textarea{
+    width: 100%;
+    padding: 10px;
+    height: 120px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    font-size: 16px;
+    outline: none;
+}
+.form-notifications .text-notifications textarea:focus{
+    border: 2px solid var(--dark-color);
+}
+.form-notifications button{
+    padding: 13px 32px;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--success-color);
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    margin: 20px 5px 20px 5px;
+    transition: .5s ease;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+.form-notifications button:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+
 @media(max-width:768px){
     .sidebar{
         display: none;

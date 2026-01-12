@@ -213,7 +213,7 @@ nav .nav-left a i{
 }
 
 .after-login i:hover{
-    transform: scale(1.2);
+    /* transform: scale(1.2); */
 }
 .after-login strong{
     margin-left: 5px;
@@ -645,6 +645,54 @@ p{
 .floating-buttons button.mood{
     background-color: var(--dark-color);
     color: white;
+}
+
+/* الاشعارات */
+.notifications{
+    position: absolute;
+    left: 50px;
+    top: 43px;
+    border: 2px solid black;
+    background-color: var(--success-color);
+    border-radius: 12px;
+    width: 500px;
+}
+
+.notifications .head-notif{
+    background-color: var(--dark-color);
+    padding: 20px;
+    border-radius: 9px 9px 0 0 ;
+}
+.notifications .body-notif ul .liText {
+    display: flex;
+    font-size: 15px;
+    gap: 10px;
+    font-style: normal;
+    color: var(--dark-color);
+    font-weight: 200;
+    padding: 0 20px;
+}
+.notifications .body-notif ul .liText:not(:first-child){
+    border-top: 2px solid var(--dark-color);
+
+}
+.notifications li.no-notifications {
+    display: flex;
+    border-top: 2px solid var(--success-color) !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+.notifications .close-notifications{
+    position: absolute;
+    right: -14px;
+    top: -13px;
+    background-color: var(--primary-color);
+    padding: 7px 10px;
+    border-radius: 50%;
 }
 
 
