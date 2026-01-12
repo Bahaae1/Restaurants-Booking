@@ -142,18 +142,7 @@ function showDataUser(){
                 <h4>${search.name}</h4> 
             </div>
             <i id="notifications" class="fa-solid fa-bell">
-            <div class="notifications">
-                <span class="close-notifications">X</span>
-                        <div class="head-notif">
-                            <i class="fa-solid fa-bell"></i>
-                            <span>الاشعارات</span>
-                        </div>
-                        <div class="body-notif">
-                            <ul id="ul-notifications">
-                                
-                            </ul>
-                        </div>
-                    </div>
+            
             </i>
             <i onclick="logout()" class="fa-solid fa-right-from-bracket"></i>
 
@@ -161,10 +150,7 @@ function showDataUser(){
         `
         afterLogin.innerHTML = user
         }
-        let notifications = document.querySelector('#notifications .notifications')
-        notifications.style.display = 'none'
-        showNotifications()
-        
+
 };
 showDataUser();
 
@@ -225,32 +211,6 @@ search.innerHTML = createData
 // }
 
 // انشاء زرار للادمن يوديني صفحة الادمن
-// function goAdmin(){
-//     let email = JSON.parse(localStorage.getItem('currentUser') )
-//     let Bahaa = email.email
-//     if(Bahaa === "bahaa.hassan.m@gmail.com"){
-//         let btn = document.querySelector('.floating-buttons')
-    
-//         let createBtn = document.createElement('button')
-//         createBtn.className = 'admin'
-//         createBtn.id = 'admin'
-//         let icon = document.createElement('i')
-//         icon.className = "fa-solid fa-gear"
-    
-//         createBtn.appendChild(icon)
-    
-    
-//         btn.appendChild(createBtn)
-
-//         createBtn.onclick = function(){
-//             location.assign('./HTML/dashbord.html')
-//         }
-//     }
-//     else{
-//         console.log(',,,')
-//     }
-// }
-// goAdmin()
 function goAdmin(){
     let email = JSON.parse(localStorage.getItem('currentUser') )
     let Bahaa = email.email
@@ -264,17 +224,20 @@ function goAdmin(){
         icon.className = "fa-solid fa-gear"
     
         createBtn.appendChild(icon)
+    
+    
         btn.appendChild(createBtn)
 
         createBtn.onclick = function(){
-            location.assign('../HTML/dashbord.html')
+            location.assign('./HTML/dashbord.html')
         }
     }
     else{
         console.log(',,,')
     }
 }
-goAdmin();
+goAdmin()
+
 
 // عرض عدد الحجوزات النشطة
 
@@ -288,44 +251,57 @@ showBookingActive()
 
 // عرض الاشعارات
 
-function showNotifications(){
-    let notif = document.getElementById('notifications')
-    let ulNotif = document.getElementById('ul-notifications')
-    let close = document.querySelector('.notifications .close-notifications')
-    let locNotif = JSON.parse(localStorage.getItem('notifications'))
-    let user = JSON.parse(localStorage.getItem('currentUser'))
-    let filterUser = locNotif.filter(e=>e.email === user.email )
+// function showNotifications(){
+//     let notif = document.getElementById('notifications')
+//     let ulNotif = document.getElementById('ul-notifications')
+//     let close = document.querySelector('.notifications .close-notifications')
+//     let locNotif = JSON.parse(localStorage.getItem('notifications'))
+//     let user = JSON.parse(localStorage.getItem('currentUser'))
+//     let filterUser = locNotif.filter(e=>e.email === user.email )
 
-    close.addEventListener('click' ,()=>{            
-        notifications.style.display = 'none'
-        location.reload()
-    })
-    let notific;
-    notif.addEventListener('click' , ()=>{
+//     close.addEventListener('click' ,()=>{            
+//         notifications.style.display = 'none'
+//         location.reload()
+//     })
+//     let notific;
+//     notif.addEventListener('click' , ()=>{
 
-        let notifications = document.querySelector('#notifications .notifications')
-        notifications.style.display = 'block'
+//         let notifications = document.querySelector('#notifications .notifications')
+//         notifications.style.display = 'block'
         
-        if(ulNotif.children.length > 0){
+//         if(ulNotif.children.length > 0){
             
-            for(let i = 0 ; i < filterUser.length ; i++){
-                notific= `
-                <li class="liText">
-                    <p>${filterUser[i].text}</p>
-                </li>
-                `
-                ulNotif.innerHTML += notific
-            }
-        }else{
-            ulNotif.innerHTML = `
-            <li class="no-notifications">
-                <h3>لا توجد اشعارات</h3>
-                <p>سوف تظهر الاشعارات الجديدة هنا</p>
-            </li>
-            `
+//             for(let i = 0 ; i < filterUser.length ; i++){
+//                 notific= `
+//                 <li class="liText">
+//                     <p>${filterUser[i].text}</p>
+//                 </li>
+//                 `
+//                 ulNotif.innerHTML += notific
+//             }
+//         }else{
+//             ulNotif.innerHTML = `
+//             <li class="no-notifications">
+//                 <h3>لا توجد اشعارات</h3>
+//                 <p>سوف تظهر الاشعارات الجديدة هنا</p>
+//             </li>
+//             `
             
             
-        }
-    })
+//         }
+//     })
     
-}
+// }
+
+{/* <div class="notifications">
+                <span class="close-notifications">X</span>
+                        <div class="head-notif">
+                            <i class="fa-solid fa-bell"></i>
+                            <span>الاشعارات</span>
+                        </div>
+                        <div class="body-notif">
+                            <ul id="ul-notifications">
+                                
+                            </ul>
+                        </div>
+</div> */}
