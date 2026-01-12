@@ -397,7 +397,7 @@ let resArr = JSON.parse(localStorage.getItem('restaurantsArr') )
 function returnBooking(i){
     let nRest = resArr.find(e=>e.name === bookingCanc[i].nameRest )
     localStorage.setItem('clickRest', JSON.stringify(nRest))
-    location.assign('/HTML/input-data-user.html')
+    location.assign('../HTML/input-data-user.html')
 }
 
 
