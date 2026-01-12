@@ -225,6 +225,32 @@ search.innerHTML = createData
 // }
 
 // انشاء زرار للادمن يوديني صفحة الادمن
+// function goAdmin(){
+//     let email = JSON.parse(localStorage.getItem('currentUser') )
+//     let Bahaa = email.email
+//     if(Bahaa === "bahaa.hassan.m@gmail.com"){
+//         let btn = document.querySelector('.floating-buttons')
+    
+//         let createBtn = document.createElement('button')
+//         createBtn.className = 'admin'
+//         createBtn.id = 'admin'
+//         let icon = document.createElement('i')
+//         icon.className = "fa-solid fa-gear"
+    
+//         createBtn.appendChild(icon)
+    
+    
+//         btn.appendChild(createBtn)
+
+//         createBtn.onclick = function(){
+//             location.assign('./HTML/dashbord.html')
+//         }
+//     }
+//     else{
+//         console.log(',,,')
+//     }
+// }
+// goAdmin()
 function goAdmin(){
     let email = JSON.parse(localStorage.getItem('currentUser') )
     let Bahaa = email.email
@@ -238,19 +264,17 @@ function goAdmin(){
         icon.className = "fa-solid fa-gear"
     
         createBtn.appendChild(icon)
-    
-    
         btn.appendChild(createBtn)
 
         createBtn.onclick = function(){
-            location.assign('./HTML/dashbord.html')
+            location.assign('../HTML/dashbord.html')
         }
     }
     else{
         console.log(',,,')
     }
 }
-goAdmin()
+goAdmin();
 
 // عرض عدد الحجوزات النشطة
 
