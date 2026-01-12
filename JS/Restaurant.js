@@ -1,7 +1,7 @@
 
 // دي بتعرض بيانات المطعم اللي اتفتح
 window.onload = function(){
-    let dataRest = JSON.parse(localStorage.getItem('clickRest'))
+    let dataRest = JSON.parse(localStorage.getItem('clickRest') )
     console.log(dataRest)
 
     let showInfo = `

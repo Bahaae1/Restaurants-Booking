@@ -38,8 +38,7 @@ up.onclick = function(){
 
 // عرض المطاعم في الاعلى تقييما
 
-let ratingRestaurant = localStorage.getItem('restaurantsArr')
-let ratingObj = JSON.parse(ratingRestaurant)
+let ratingObj = JSON.parse(localStorage.getItem('restaurantsArr') )
 let restaurantSection = document.querySelector('#restaurant-section .restaurant-all')
 
 function showRatingRestaurant(){
@@ -128,8 +127,8 @@ function btnDetails(i){
 // لما المستخدم يسجل الدخول الحاجات دي تظهرله
 function showDataUser(){
     if(localStorage.getItem('currentUser')){
-    let currentUser = JSON.parse(localStorage.getItem('currentUser'))
-    let profileData = JSON.parse(localStorage.getItem('infoUser'));
+    let currentUser = JSON.parse(localStorage.getItem('currentUser') )
+    let profileData = JSON.parse(localStorage.getItem('infoUser') );
     let search = profileData.find(user=> user.email === currentUser.email)
 
     let linkLogin = document.querySelector('.link-login')
@@ -212,7 +211,7 @@ search.innerHTML = createData
 
 // انشاء زرار للادمن يوديني صفحة الادمن
 function goAdmin(){
-    let email = JSON.parse(localStorage.getItem('currentUser'))
+    let email = JSON.parse(localStorage.getItem('currentUser') )
     let Bahaa = email.email
     if(Bahaa === "bahaa.hassan.m@gmail.com"){
         let btn = document.querySelector('.floating-buttons')

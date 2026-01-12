@@ -15,8 +15,8 @@ function goLogin(){
 // لما المستخدم يسجل الدخول الحاجات دي تظهرله
 window.onload = function showDataUser(){
     if(localStorage.getItem('currentUser')){
-    let currentUser = JSON.parse(localStorage.getItem('currentUser'))
-    let profileData = JSON.parse(localStorage.getItem('infoUser'));
+    let currentUser = JSON.parse(localStorage.getItem('currentUser') )
+    let profileData = JSON.parse(localStorage.getItem('infoUser') );
     let search = profileData.find(user=> user.email === currentUser.email)
 
     let afterLogin = document.querySelector('.icon-bell')
@@ -52,8 +52,7 @@ function logout(){
 
 // عرض المطاعم في  في صفحة المطاعم
 
-let ratingRestaurant = localStorage.getItem('restaurantsArr')
-let ratingObj = JSON.parse(ratingRestaurant)
+let ratingObj = JSON.parse(localStorage.getItem('restaurantsArr') )
 let restaurantSection = document.querySelector('#restaurant-section .restaurant-all')
 let restaurantCount = document.querySelector('#restaurant-section .restaurant-count')
 
@@ -402,7 +401,7 @@ function btnBooking(i){
 
 // المفروض دي اللي هتاخده على صفحة المطعم
 function btnDetails(i){
-    let dateRest = JSON.parse(localStorage.getItem('restaurantsArr'))
+    let dateRest = JSON.parse(localStorage.getItem('restaurantsArr') )
     let clickRest = dateRest[i]
     console.log(clickRest)
     localStorage.setItem('clickRest' , JSON.stringify(clickRest))

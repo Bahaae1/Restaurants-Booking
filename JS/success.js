@@ -1,8 +1,8 @@
 
 // عرض تفاصيل الحجز
 function showDataBooking(){
-    let bookingNow = JSON.parse(localStorage.getItem('bookingNow'))
-    let clickRest = JSON.parse(localStorage.getItem('clickRest'))
+    let bookingNow = JSON.parse(localStorage.getItem('bookingNow') )
+    let clickRest = JSON.parse(localStorage.getItem('clickRest') )
 
 
     // عشان اعرض كود الحجز

@@ -17,9 +17,9 @@ function logout(){
 
 
 
-let currentUser = JSON.parse(localStorage.getItem('currentUser'))
+let currentUser = JSON.parse(localStorage.getItem('currentUser') )
 
-let profileData = JSON.parse(localStorage.getItem('infoUser'));
+let profileData = JSON.parse(localStorage.getItem('infoUser') );
 
 let search = profileData.find(user=> user.email === currentUser.email)
 window.onload = function(){
@@ -183,8 +183,8 @@ function emailBlur(){
 
 // عرض الحجوزات
 
-let booking = JSON.parse(localStorage.getItem('dataBookingArr'))
-let user = JSON.parse(localStorage.getItem('currentUser'))
+let booking = JSON.parse(localStorage.getItem('dataBookingArr') )
+let user = JSON.parse(localStorage.getItem('currentUser') )
 let bookingUser = booking.filter(e=> e.emailCurrentUser === user.email )
 function showBooking(){
 
@@ -239,6 +239,7 @@ showBooking();
 // عرض الحجوزات النشطة
 document.getElementById('count-booking-active').innerHTML = bookingUser.length
 
+// لما ادوس علي زرار يتعمل اكتييف
 let filters = document.querySelectorAll('#filters button')
 filters.forEach(e=>{
     e.addEventListener('click', ()=>{
@@ -304,7 +305,7 @@ btnSaveEdit.onclick = function(){
 
 // انشاء زرار للادمن يوديني صفحة الادمن
 function goAdmin(){
-    let email = JSON.parse(localStorage.getItem('currentUser'))
+    let email = JSON.parse(localStorage.getItem('currentUser') )
     let Bahaa = email.email
     if(Bahaa === "bahaa.hassan.m@gmail.com"){
         let btn = document.querySelector('.floating-buttons')
@@ -332,7 +333,7 @@ goAdmin();
 
 // زرار الغاء الحجز
 function cancelledBooking(i){
-    let cancelled = JSON.parse(localStorage.getItem('cancelled'))
+    let cancelled = JSON.parse(localStorage.getItem('cancelled') )
     cancelled.push(bookingUser[i])
     localStorage.setItem('cancelled' , JSON.stringify(cancelled))
 
@@ -341,8 +342,9 @@ function cancelledBooking(i){
     localStorage.setItem('dataBookingArr' , JSON.stringify(booking))
 }
 // عرض الحجوزات الملغيه
-let locCancelled = JSON.parse(localStorage.getItem("cancelled"))
+let locCancelled = JSON.parse(localStorage.getItem("cancelled") )
 let bookingCanc = locCancelled.filter(e=> e.emailCurrentUser === user.email )
+
 function showCancelledBooking(){
     let showBookingsCancelled ;
 
@@ -391,7 +393,7 @@ function showCancelledBooking(){
 showCancelledBooking();
 
 // زرار اعادة الحجز للحجوزات الملغية
-let resArr = JSON.parse(localStorage.getItem('restaurantsArr'))
+let resArr = JSON.parse(localStorage.getItem('restaurantsArr') )
 function returnBooking(i){
     let nRest = resArr.find(e=>e.name === bookingCanc[i].nameRest )
     localStorage.setItem('clickRest', JSON.stringify(nRest))
@@ -400,7 +402,7 @@ function returnBooking(i){
 
 
 // عرض الحجوزات اللي انتهت
-let locCompleted = JSON.parse(localStorage.getItem("completed"))
+let locCompleted = JSON.parse(localStorage.getItem("completed") )
 let bookingComp = locCompleted.filter(e=> e.emailCurrentUser === user.email )
 function showCompletedBooking(){
     let showBookingsCompleted ;
@@ -676,4 +678,71 @@ function closeDetails(){
 }
 
 
+//  عرض تفاصيل الحجوزات اللي انتهت
+function showDetailsBookingMon(i){
+    showDetails.style.display = 'block'
+    showDetails.innerHTML =`
+        <div class="show-details">
+                <h2>
+                    <i class="fas fa-info-circle"></i>
+                    <span>تفاصيل الحجز</span>
+                </h2>
+            <div class="grid-show-details">
+                <div >
+                    <i class="fas fa-user"></i>
+                    <p><strong>الاسم : </strong> <span>${bookingMon[i].name}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-hashtag"></i>
+                    <p><strong>رقم الحجز : </strong> <span>${bookingMon[i].numBookings}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-calendar-day"></i>
+                    <p><strong>التاريخ:</strong> <span>${bookingMon[i].date}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-clock"></i>
+                    <p><strong>الوقت:</strong> <span>${bookingMon[i].time}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-users"></i>
+                    <p><strong>عدد الأشخاص:</strong> <span>${bookingMon[i].countPeople} أشخاص</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-phone"></i>
+                    <p><strong>الهاتف:</strong> <span>${bookingMon[i].phone}</span></p>
+                </div>
+                <div >
+                    <i class="fas fa-user"></i>
+                    <p><strong>البريد الإلكتروني:</strong> <span>${bookingMon[i].email}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-calendar-day"></i>
+                    <p><strong> ملاحظات خاصة:</strong> <span>${bookingMon[i].nots}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-store"></i>
+                    <p><strong>اسم المطعم:</strong> <span>${bookingMon[i].nameRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p><strong>العنوان:</strong> <span>${bookingMon[i].locationRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-utensils"></i>
+                    <p><strong>نوع المطبخ:</strong> <span>${bookingMon[i].typeRest}</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-user"></i>
+                    <p><strong>الادمن:</strong> <span>بيبو</span></p>
+                </div>
+
+                <button onclick="closeDetails()">
+                    اغلاق
+                </button>
+            </div>
+
+        </div>
+    ` 
+}
 

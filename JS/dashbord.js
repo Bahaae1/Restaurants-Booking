@@ -167,8 +167,8 @@ btnAddRestaurants.addEventListener('click', ()=>{
 // اظهار بيانات المطاعم
 let countRestaurants = document.getElementById('count-restaurants')
 let tableRestaurant = document.querySelector('table .add-restaurant-new')
-let dataLocalStorage = localStorage.getItem('restaurantsArr')
-let dataRestaurants = JSON.parse(dataLocalStorage)
+
+let dataRestaurants = JSON.parse(localStorage.getItem('restaurantsArr') )
 
 function showRestaurant() {
 
@@ -240,8 +240,7 @@ function editRestaurant(i){
 
 // عرض المستخدمين في الداش بورد
 let countUsers = document.getElementById('count-users')
-let theUsers = localStorage.getItem('infoUser');
-let objUser = JSON.parse(theUsers)
+let objUser = JSON.parse(localStorage.getItem('infoUser'))
 let tableUsers = document.querySelector('#users tbody')
 
 function showUsers(){
@@ -333,8 +332,8 @@ function showBooking(){
             <td>${bookingsUser[i].time}</td>
             <td class="status-yellow">قيد الانتظار</td>
             <td>
-            <i onclick="showDetailsBookingCom(${i})" class="fas fa-eye"></i>
-            <i onclick="completedBooking(${i})" class="fas fa-check"></i>
+                <i onclick="showDetailsBookingCom(${i})" class="fas fa-eye"></i>
+                <i onclick="completedBooking(${i})" class="fas fa-check"></i>
                 <i onclick="cancelledBooking(${i})" class="fas fa-times"></i>
             </td>
         </tr>
@@ -345,7 +344,6 @@ function showBooking(){
     
 }
 showBooking()
-
 
 
 let cancelled = [];
@@ -384,7 +382,7 @@ function showCancelledBooking(){
                 `
                 document.getElementById('show-bookings').innerHTML += showBookingsCancelled
                 document.getElementById('show-bookings-control').innerHTML += showBookingsCancelled
-            }
+    }    
 }
 showCancelledBooking();
 

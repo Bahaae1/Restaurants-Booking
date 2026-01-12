@@ -11,7 +11,7 @@ closeAlert.addEventListener('click', ()=>{
 
 // اظهار بيانات المطعم
 window.onload = function(){
-    let dataRest = JSON.parse(localStorage.getItem('clickRest'))
+    let dataRest = JSON.parse(localStorage.getItem('clickRest') )
     console.log(dataRest.name)
     let showInfo = `
     <div class="box">
@@ -108,8 +108,8 @@ if(localStorage.dataBookingArr != null){
 }
 // تحميع بيانات الحجز
 function dataBooking(){
-    let currentUser = JSON.parse(localStorage.getItem('currentUser'))
-    let currentRest = JSON.parse(localStorage.getItem('clickRest'))
+    let currentUser = JSON.parse(localStorage.getItem('currentUser') )
+    let currentRest = JSON.parse(localStorage.getItem('clickRest') )
     if(name.value === '' || phone.value === '' || email.value === '' || countPeople.value === '' || date.value === '' || time.value === ''){
         alertMsg.innerHTML = 'من فضلك ادخل جميع البيانات'
         alertM.style.display = 'block'
@@ -136,7 +136,7 @@ function dataBooking(){
         localStorage.setItem('dataBookingArr' , JSON.stringify(dataBookingArr))
         localStorage.setItem('bookingNow' , JSON.stringify(bookingNow))
     
-        location.replace('../HTML/payment.html')
+        location.assign('../HTML/payment.html')
     }
 
 }

@@ -357,6 +357,9 @@ table tbody tr td .fa-times{
 table tbody tr td .fa-eye{
     background-color: var(--info-color);
 }
+table tbody tr td .fa-credit-card{
+    background-color: var(--accent-color);
+}
 table tbody tr td .fa-flag-checkered{
     background-color: var(--dark-color);
 }
@@ -643,7 +646,24 @@ table .stop{
     .add-restaurant{
         width: 300px;
     }
+    #show-details-booking .show-details{
+        width: 400px
+    }
+    #show-details-booking .show-details .grid-show-details{
+        font-size: 14px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
 }
+@media(max-width:450px){
+    #show-details-booking .show-details{
+        width: 320px
+    }
+    #show-details-booking .show-details .grid-show-details{
+        font-size: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+}
+
 
 .block{
     display: block;
