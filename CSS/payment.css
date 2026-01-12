@@ -14,13 +14,9 @@ body{
     --dark-color: #2D3047;
     --light-color: #F7F9FC;
     --success-color: #06D6A0;
-    --warning-color: #FFD166;
     --danger-color: #EF476F;
-    --info-color: #118AB2;
     --card-bg: #FFFFFF;
     --shadow-color: rgba(45, 48, 71, 0.1);
-    --border-radius: 12px;
-    --padding-left-right:20px;
 }
 header{
     background-color: var(--dark-color);
